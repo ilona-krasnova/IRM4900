@@ -42,7 +42,7 @@ $get_resp = file_get_contents("http://httpbin.org/get?x=15");
 
 // http post
 $curl = curl_init($url);
-curl_setopt($curl, CURLOPT_URL, "https://httpbin.org/post");
+curl_setopt($curl, CURLOPT_URL, $chatgpturl);
 curl_setopt($curl, CURLOPT_POST, true);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($curl, CURLOPT_HTTPHEADER, array($header1, $header2));
