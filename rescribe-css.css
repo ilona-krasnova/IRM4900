@@ -1,0 +1,339 @@
+body {
+    margin: 0;
+    background-color:#EFEDEB;
+}
+
+.gridContainer {
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+}
+
+.header {
+    grid-column-start: 1;
+    grid-column-end: 13;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    background-color: #32CBFF;
+    padding: 10px 30px 10px 10px;
+    
+}
+  
+.header a {
+    text-decoration: none;
+    font-stretch: expanded;
+    padding-right: 25px;
+    color: #f5f7f7;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 400;
+    letter-spacing: 3px;
+    font-size: 25px;
+}
+
+#rescribe {
+    letter-spacing: 10px;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 500;
+    font-size: 27px;
+}
+  
+.headerRight {
+    float: right;
+}
+
+.featherIcon {
+    width: 22px;
+    height: 22px;
+}
+
+/*Home page css*/
+.formElement {
+    grid-column-start: 2;
+    grid-column-end: 9;
+    grid-row-start: 3;
+    grid-row-end: 12;
+
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+}
+
+.textAInput {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    color: black;
+    padding: 30px;
+    border-radius: 20px;
+    border: none;
+    resize: none;
+    font-size: 16px;
+    grid-column-start: 1;
+    grid-column-end: 10;
+    grid-row-start: 1;
+    grid-row-end: 8;
+}
+
+.diffSlider {
+    padding: 30px;
+    grid-column-start: 5;
+    grid-column-end: 7;
+    grid-row-start: 8;
+    grid-row-end: 8;
+}
+
+#sliderValue {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    padding: 30px;
+    font-size: 17px;
+    padding: 30px;
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 10;
+    grid-row-end: 10;
+    letter-spacing: 2px;
+}
+
+.genBtn {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: black;
+    background-color: #7DCE82;
+    border-radius: 50px;
+    border: none;
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 9;
+    grid-row-end: 9;
+    letter-spacing: 2px;
+}
+
+.clearBtn {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: black;
+    background-color: #FF8360;
+    border-radius: 50px;
+    border: none;
+    grid-column-start: 6;
+    grid-column-end: 8;
+    grid-row-start: 11;
+    grid-row-end: 11;
+    letter-spacing: 2px;
+    width: 195px;
+}
+
+.homepageOwl {
+    grid-column-start: 9;
+    grid-column-end: 13;
+    grid-row-start: 4;
+    grid-row-end: 9;
+    width: 100%;
+    height: auto;
+}
+
+/*About page css*/
+.aboutHeader {
+    color: #62466B;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    letter-spacing: 5px;
+    grid-column-start: 2;
+    grid-column-end: 10;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+.aboutPara {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    line-height: 300%;
+    grid-column-start: 2;
+    grid-column-end: 9;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.aboutOwl {
+    grid-column-start: 9;
+    grid-column-end: 13;
+    grid-row-start: 3;
+    grid-row-end: 6;
+    width: 100%;
+    height: auto;
+}
+
+
+/*Contact page css*/
+.contactHeader {
+    color: #62466B;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    letter-spacing: 5px;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+.contactPara {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    line-height: 300%;
+    grid-column-start: 2;
+    grid-column-end: 10;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.conForm {
+    grid-column-start: 2;
+    grid-column-end: 9;
+    grid-row-start: 4;
+    grid-row-end: 13;
+
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+}
+
+.conTextA {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: black;
+    padding: 30px;
+    border-radius: 20px;
+    border: none;
+    resize: none;
+    font-size: 18px;
+    grid-column-start: 1;
+    grid-column-end: 8;
+    grid-row-start: 1;
+    grid-row-end: 7;
+    padding-bottom: 30px;
+}
+
+.sendBtn {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: black;
+    background-color: #7DCE82;
+    border-radius: 50px;
+    border: none;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 8;
+    grid-row-end: 8;
+    letter-spacing: 2px;
+}
+
+.clearBtn2 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: black;
+    background-color: #FF8360;
+    border-radius: 50px;
+    border: none;
+    letter-spacing: 2px;
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 11;
+    grid-row-end: 11;
+    width: 195px;
+}
+
+.contactOwl {
+    grid-column-start: 8;
+    grid-column-end: 13;
+    grid-row-start: 3;
+    grid-row-end: 9;
+    width: 100%;
+    height: auto;
+}
+
+/*Submission page css - contact page*/
+.contactSubHeader {
+    color: #62466B;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    letter-spacing: 5px;
+    grid-column-start: 2;
+    grid-column-end: 10;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.contactSubPara {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    line-height: 300%;
+    grid-column-start: 2;
+    grid-column-end: 10;
+    grid-row-start: 4;
+    grid-row-end: 5;
+
+}
+
+.subMessage {
+    grid-column-start: 4;
+    grid-column-end: 10;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.subOwl {
+    grid-column-start: 5;
+    grid-column-end: 11;
+    grid-row-start: 12;
+    width: 60%;
+    height: auto;
+
+}
+
+/*Submission page css - home page*/
+.genAiText {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    color: black;
+    padding: 30px;
+    border-radius: 20px;
+    font-size: 16px;
+    grid-column-start: 2;
+    grid-column-end: 9;
+    grid-row-start: 3;
+    grid-row-end: 12;
+    background-color: white;
+    overflow: auto;
+}
+
+.genAiOwl {
+    grid-column-start: 9;
+    grid-column-end: 13;
+    grid-row-start: 4;
+    grid-row-end: 8;
+    width: 100%;
+    height: auto;
+}
+
+.countDiv {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    color: black;
+    padding: 30px;
+    margin-top: 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    grid-column-start: 2;
+    grid-column-end: 9;
+    grid-row-start: 12;
+    grid-row-end: 12;
+    background-color: white;
+}

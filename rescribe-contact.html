@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rescribe</title>
+        <link rel="stylesheet" href="rescribe-css.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Dosis:wght@500&family=Quicksand:wght@600&display=swap');
+        </style>
+    </head>
+
+    <body>
+
+        <div class="gridContainer">
+            <div class="header">
+                <img src="images/icons8-feather-48.png" class="featherIcon" alt="Rescribe icon - a feather">        
+                <a href="#name" id="rescribe">RESCRIBE</a>
+                    <div class="headerRight">
+                        <a href="index.php">HOME</a>
+                        <a href="rescribe-about.html">ABOUT</a>
+                        <a href="rescribe-contact.html">CONTACT</a>
+                    </div><!--headerRight end-->
+            </div><!--header end-->
+
+            <h1 class="contactHeader">Contact us</h1>
+            <p class="contactPara">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation  
+            </p>
+            
+
+            <form method="post" action="contactForm.php" class="conForm">
+                <textarea class="conTextA" id="conTextAI" name="conTextArea"></textarea>
+                <button type="submit" class="sendBtn">Send</button>
+            </form>
+
+            <button onclick="clearText()" class="clearBtn2">Clear</button>
+
+            <img src="images/hootContact.svg" alt="Owl mascot" class="contactOwl">
+
+
+        </div><!--end of grid container--> 
+
+             <!--clear button function--> 
+             <script>
+                function clearText(){
+                    document.getElementById('conTextAI').value = '';
+                }
+            </script> 
+
+    </body>
+</html>
