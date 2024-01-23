@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<!-- 
+<!--
     - IRM4900 Capstone Project - Fall 2023/ Winter 2024
     - Using Generative Artificial Intelligence for Age-Appropriate Text Summarization
 
-    - Team Members  
+    - Team Members
     - Technical Lead: Jamila Johnson | 101206365
-    - Documentation: Phoebe Chong | 101075924 
+    - Documentation: Phoebe Chong | 101075924
     - Lead Developer/AI: Ilona Krasnova | 101211529
     - UI/UX Designer: Morgan Gardiner | 101024884
 
-    - Rescribe's contact page. Displaying that the form has been sent 
+    - Rescribe's contact page. Displaying that the form has been sent
 -->
 
 <html lang="en">
@@ -39,14 +39,14 @@
                     </div><!--headerRight end-->
             </div><!--header end-->
 
-        
+
            <!--<img src="images/hootMessage.png" alt="Thank you for contact us" class="subMessage">
             <img src="images/hootSub.png" alt="Owl mascot" class="subOwl">-->
 
-            
 
 
-        </div><!--end of grid container--> 
+
+        </div><!--end of grid container-->
 
     </body>
 </html>

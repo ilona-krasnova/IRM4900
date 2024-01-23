@@ -2,14 +2,14 @@
 - IRM4900 Capstone Project - Fall 2023/ Winter 2024
 - Using Generative Artificial Intelligence for Age-Appropriate Text Summarization
 
-- Team Members  
+- Team Members
 - Technical Lead: Jamila Johnson | 101206365
-- Documentation: Phoebe Chong | 101075924 
+- Documentation: Phoebe Chong | 101075924
 - Lead Developer/AI: Ilona Krasnova | 101211529
 - UI/UX Designer: Morgan Gardiner | 101024884
 
 - CSS stylesheet for all of Rescribe's pages
-- Pages uses grid container layout to map out HTML elements 
+- Pages uses grid container layout to map out HTML elements
 */
 
 body {
@@ -32,15 +32,15 @@ body {
     grid-row-start: 1;
     grid-row-end: 1;
     background-color: #32CBFF;
-    padding: 10px 30px 10px 10px;
-    
+    padding: 15px 30px 15px 10px;
+
 }
-  
+
 .header a {
     text-decoration: none;
     font-stretch: expanded;
     padding-right: 25px;
-    color: #f5f7f7;
+    color: #62466B;
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 400;
     letter-spacing: 3px;
@@ -53,7 +53,7 @@ body {
     font-weight: 500;
     font-size: 27px;
 }
-  
+
 .headerRight {
     float: right;
 }
