@@ -2,14 +2,14 @@
 - IRM4900 Capstone Project - Fall 2023/ Winter 2024
 - Using Generative Artificial Intelligence for Age-Appropriate Text Summarization
 
-- Team Members
+- Team Members  
 - Technical Lead: Jamila Johnson | 101206365
-- Documentation: Phoebe Chong | 101075924
+- Documentation: Phoebe Chong | 101075924 
 - Lead Developer/AI: Ilona Krasnova | 101211529
 - UI/UX Designer: Morgan Gardiner | 101024884
 
 - CSS stylesheet for all of Rescribe's pages
-- Pages uses grid container layout to map out HTML elements
+- Pages uses grid container layout to map out HTML elements 
 */
 
 body {
@@ -32,10 +32,10 @@ body {
     grid-row-start: 1;
     grid-row-end: 1;
     background-color: #32CBFF;
-    padding: 15px 30px 15px 10px;
-
+    padding: 10px 30px 10px 10px;
+    
 }
-
+  
 .header a {
     text-decoration: none;
     font-stretch: expanded;
@@ -53,7 +53,7 @@ body {
     font-weight: 500;
     font-size: 27px;
 }
-
+  
 .headerRight {
     float: right;
 }
@@ -75,6 +75,15 @@ body {
     grid-template-rows: repeat(9, 1fr);
 }
 
+#contactFormLabel2 {
+    color: #FF8360;
+    grid-column-start: 1;
+    grid-column-end: 10;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    font-family: 'Quicksand', sans-serif;
+}
+
 .textAInput {
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
@@ -86,7 +95,7 @@ body {
     font-size: 16px;
     grid-column-start: 1;
     grid-column-end: 10;
-    grid-row-start: 1;
+    grid-row-start: 2;
     grid-row-end: 8;
 }
 
@@ -114,7 +123,7 @@ body {
 .genBtn {
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
-    font-size: 17px;
+    font-size: 15px;
     color: black;
     background-color: #7DCE82;
     border-radius: 50px;
@@ -129,17 +138,16 @@ body {
 .clearBtn {
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
-    font-size: 17px;
+    font-size: 15px;
     color: black;
     background-color: #FF8360;
     border-radius: 50px;
     border: none;
     grid-column-start: 6;
     grid-column-end: 8;
-    grid-row-start: 11;
-    grid-row-end: 11;
-    letter-spacing: 2px;
-    width: 195px;
+    grid-row-start: 9;
+    grid-row-end: 9;
+    letter-spacing: 2px; 
 }
 
 .homepageOwl {
@@ -182,7 +190,6 @@ body {
     height: auto;
 }
 
-
 /*Contact page css*/
 .contactHeader {
     color: #62466B;
@@ -200,7 +207,7 @@ body {
     font-weight: 600;
     line-height: 300%;
     grid-column-start: 2;
-    grid-column-end: 10;
+    grid-column-end: 11;
     grid-row-start: 3;
     grid-row-end: 4;
 }
@@ -216,6 +223,15 @@ body {
     grid-template-rows: repeat(9, 1fr);
 }
 
+#contactFormLabel1 {
+    color: #FF8360;
+    grid-column-start: 1;
+    grid-column-end: 8;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    font-family: 'Quicksand', sans-serif;
+}
+
 .conTextA {
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
@@ -228,7 +244,7 @@ body {
     font-size: 18px;
     grid-column-start: 1;
     grid-column-end: 8;
-    grid-row-start: 1;
+    grid-row-start: 2;
     grid-row-end: 7;
     padding-bottom: 30px;
 }
@@ -236,7 +252,7 @@ body {
 .sendBtn {
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
-    font-size: 17px;
+    font-size: 15px;
     color: black;
     background-color: #7DCE82;
     border-radius: 50px;
@@ -251,24 +267,23 @@ body {
 .clearBtn2 {
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
-    font-size: 17px;
+    font-size: 15px;
     color: black;
     background-color: #FF8360;
     border-radius: 50px;
     border: none;
-    letter-spacing: 2px;
     grid-column-start: 5;
-    grid-column-end: 6;
-    grid-row-start: 11;
-    grid-row-end: 11;
-    width: 195px;
+    grid-column-end: 7;
+    grid-row-start: 8;
+    grid-row-end: 8;
+    letter-spacing: 2px;   
 }
 
 .contactOwl {
     grid-column-start: 8;
     grid-column-end: 13;
-    grid-row-start: 3;
-    grid-row-end: 9;
+    grid-row-start: 4;
+    grid-row-end: 8;
     width: 100%;
     height: auto;
 }
