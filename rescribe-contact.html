@@ -3,14 +3,14 @@
     - IRM4900 Capstone Project - Fall 2023/ Winter 2024
     - Using Generative Artificial Intelligence for Age-Appropriate Text Summarization
 
-    - Team Members
+    - Team Members  
     - Technical Lead: Jamila Johnson | 101206365
-    - Documentation: Phoebe Chong | 101075924
+    - Documentation: Phoebe Chong | 101075924 
     - Lead Developer/AI: Ilona Krasnova | 101211529
     - UI/UX Designer: Morgan Gardiner | 101024884
 
-    - Rescribe's contact page. Used to allow students, teachers and parents the ability to
-    - provide feedback, send inquires, make complaints etc.
+    - Rescribe's contact page. Used to allow students, teachers and parents the ability to 
+    - provide feedback, send inquires, make complaints etc. 
 -->
 
 <html lang="en">
@@ -31,7 +31,7 @@
         <!--Website toolbar: allows user the ability to redirect to other pages of the website-->
         <div class="gridContainer">
             <div class="header">
-                <img src="images/icons8-feather-48.png" class="featherIcon" alt="Rescribe icon - a feather">
+                <img src="images/icons8-feather-48.png" class="featherIcon" alt="Rescribe icon - a feather">        
                 <a href="#name" id="rescribe">RESCRIBE</a>
                     <div class="headerRight">
                         <a href="index.php">HOME</a>
@@ -42,30 +42,24 @@
 
             <h1 class="contactHeader">Contact us</h1>
             <p class="contactPara">If you have any questions or just want to say hi, drop us a message below! We’d love to hear from you.
-              To be continued...
+                To be continued...  
             </p>
-
+            
             <!--HTML form that uses a HTTP post request to send user request (e.g., user inquiry or feedback)
                 The form data is sent for processing to a PHP file "contactForm.php".
             -->
             <form method="post" action="contactForm.php" class="conForm">
+                <label for="conTextAI" id="contactFormLabel1">Contact Textarea</label>
                 <textarea class="conTextA" id="conTextAI" name="conTextArea"></textarea>
+                <input type="reset" class="clearBtn2" value="Clear">
                 <button type="submit" class="sendBtn">Send</button>
             </form>
-
-            <button onclick="clearText()" class="clearBtn2">Clear</button>
 
             <img src="images/hootContact.svg" alt="Owl mascot" class="contactOwl">
 
 
-        </div><!--end of grid container-->
+        </div><!--end of grid container--> 
 
-             <!--clear button function: clears the contents of the teatarea-->
-             <script>
-                function clearText(){
-                    document.getElementById('conTextAI').value = '';
-                }
-            </script>
-
+     
     </body>
 </html>
