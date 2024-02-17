@@ -75,7 +75,7 @@ body {
     grid-template-rows: repeat(9, 1fr);
 }
 
-#contactFormLabel2 {
+#instructions {
     color: #FF8360;
     grid-column-start: 1;
     grid-column-end: 10;
@@ -192,7 +192,7 @@ body {
 
 /*Contact page css*/
 .contactHeader {
-    color: #62466B;
+    color: #4F3A5A;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     letter-spacing: 5px;
@@ -216,7 +216,7 @@ body {
     grid-column-start: 2;
     grid-column-end: 9;
     grid-row-start: 4;
-    grid-row-end: 13;
+    grid-row-end: 12;
 
     display: grid;
     grid-template-columns: repeat(9, 1fr);
@@ -281,7 +281,7 @@ body {
 
 .contactOwl {
     grid-column-start: 8;
-    grid-column-end: 13;
+    grid-column-end: 12;
     grid-row-start: 4;
     grid-row-end: 8;
     width: 100%;
@@ -290,7 +290,7 @@ body {
 
 /*Submission page css - contact page*/
 .contactSubHeader {
-    color: #62466B;
+    color: #4F3A5A;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     letter-spacing: 5px;
@@ -311,20 +311,36 @@ body {
 
 }
 
-.subMessage {
-    grid-column-start: 4;
-    grid-column-end: 10;
+.thankYouMes {
+    color: #4F3A5A;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    line-height: 300%;
+    grid-column-start: 2;
+    grid-column-end: 7;
     grid-row-start: 4;
-    grid-row-end: 5;
+    grid-row-end: 6;
+    font-size: 40px;
 }
 
-.subOwl {
-    grid-column-start: 5;
-    grid-column-end: 11;
-    grid-row-start: 12;
-    width: 60%;
-    height: auto;
+.userMes {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    line-height: 300%;
+    grid-column-start: 2;
+    grid-column-end: 7;
+    grid-row-start: 6;
+    grid-row-end: 7;
+    font-size: 19px;
+}
 
+.contactOwlSub {
+    grid-column-start: 8;
+    grid-column-end: 13;
+    grid-row-start: 4;
+    grid-row-end: 9;
+    width: 100%;
+    height: auto;
 }
 
 /*Submission page css - home page*/

@@ -42,10 +42,10 @@
             <!--HTML form that uses a HTTP post request to send user request/ API request.
                 The form data is sent for processing to a PHP file "output.php".
             -->
-            <form method="post" action="output.php" class="formElement">
-                    <label for="textAI" id="contactFormLabel2">Textarea</label>
-                    <textarea class="textAInput" id="textAI" name="textArea" placeholder="Type text here..."></textarea>
-                    <input type="range" min="1" max="3" value="1" class="diffSlider" id="dSlider" name="slider" onchange="changingSlider()">
+            <form method="post" action="summarise_text.php" class="formElement">
+                    <label for="textAI" id="instructions">Please paste the text to simplify into the box below</label>
+                    <textarea class="textAInput" id="textAI" name="text" placeholder="Type text here..."></textarea>
+                    <input type="range" min="1" max="3" value="1" class="diffSlider" id="dSlider" name="level" onchange="changingSlider()">
                     
                     <input type="reset" class="clearBtn" value="Clear">
                     <button type="submit" class="genBtn">Generate</button>
@@ -60,7 +60,7 @@
 
         <!--clear button function--> 
         <script>
-            /*Dsiplay and update slider value - reassign slider's predefined numerical values as Easy, Medium and Hard
+            /*Dsiplay and update slider value - reassign slider's predefined numerical values as Simple, Medium and Complex
             */
 
             let changeSlider = document.getElementById("dSlider");
@@ -68,18 +68,18 @@
             valueOfSlider.innerHTML = changeSlider.value;
 
             if(changeSlider.value == 1){
-                valueOfSlider.innerHTML = "Easy"; 
+                valueOfSlider.innerHTML = "Simple"; 
             }
 
             function changingSlider() {
                 if(changeSlider.value == 1){
-                    valueOfSlider.innerHTML = "Easy"; 
+                    valueOfSlider.innerHTML = "Simple"; 
                 } else if (changeSlider.value == 2) {
                     valueOfSlider.innerHTML = "Medium";
                 } else if (changeSlider.value == 3) {
-                    valueOfSlider.innerHTML = "Hard";
-                } else {
-                    valueOfSlider.innerHTML = "undefined";
+                    valueOfSlider.innerHTML = "Complex";
+                // } else {
+                //     valueOfSlider.innerHTML = "undefined";
                 }
             }//end of function 
 

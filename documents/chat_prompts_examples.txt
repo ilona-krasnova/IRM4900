@@ -1,0 +1,99 @@
+ORIGINAL TEXT:
+Language documentation involves recording the speech of native speakers. Transcribing these recordings, which are rich cultural and linguistic resources, is an integral part of the language documentation process. However, transcription is slow: it often takes a linguist between 30 minutes to 2 hours to transcribe and translate a minute of speech, depending on the transcriber’s familiarity with the language and the difficulty of the content. This is a bottleneck in the documentary linguistics workflow: linguists accumulate considerable amounts of speech, but do not transcribe and translate it all, and there is a risk that untranscribed recordings could end up as “data graveyards” (Himmelmann, 2006, 4,12-13). There is clearly a need for “devising better ways for linguists to do their work” (Thieberger, 2016, 92). There has been work on low-resource speech recognition (Besacier et al., 2014), with approaches using cross-lingual information for better acoustic modelling (Burget et al., 2010; Vu et al., 2014; Xu et al., 2016; Müller et al., 2017) and language modelling (Xu and Fung, 2013). However, speech recognition technology has largely been ineffective for endangered languages since architectures based on hidden Markov models (HMMs), which generate orthographic transcriptions, require a large pronunciation lexicon and a language model trained on text. These speech recognition systems are usually trained on a variety of speakers and hundreds of hours of data (Hinton et al., 2012, 92), with the goal of generalisation to new speakers. Since large amounts of text are used for language model training, such systems often do not incorporate pitch information for speech recognition of tonal languages (Metze et al., 2013), as they can instead rely on contextual information for tonal disambiguation via the language model (Le and Besacier, 2009; Feng et al., 2012) even though there is no computational burden in additionally using pitch features. In contrast, language documentation contexts often have just a few speakers for model training and little text for language model training. However, there may be benefit even in a system that overfits to these speakers. If a phonemic recognition tool can provide a canvas transcription for manual correction and linguistic analysis, it may be possible to improve the workflow and leverage of linguists. The transcriptions collected in this semi-automated workflow can then be used for refinement of the acoustic model, leading to a snowball effect of better and faster transcription. In this paper we investigate the application of neural speech recognition models to the task of phonemic and tonal transcription in a language documentation setting where limited resources are available for model training. We use the connectionist temporal classification (CTC) formulation (Graves et al., 2006) for the purposes of direct prediction of phonemes and tones given an acoustic signal, thus bypassing the need for a pronunciation lexicon, language model, and time alignments of phonemes in the training data. By reducing the data requirements we make automatic transcription technology more feasible in a language documentation setting.
+
+
+
+gpt-4-1106-preview  seed=42  temp=0.7
+-------------------------------------
+REQUEST:
+Write a very short (less then 160 words) summary of the following article. You audience is 6th grade school students. Use clear and simple language, even when explaining complex topics. Bias toward short sentences. Avoid jargon.
+
+RESPONSE (6th grade):
+People who study languages, called linguists, record people talking in different languages, especially ones not many people speak. They write down what is said, which can take a really long time—up to two hours for just one minute of talking! Sometimes they can't write down everything, and then the recordings might get forgotten, which is sad because they're important for learning about the language. Linguists are trying to find easier ways to do their work. They're experimenting with computer programs that can listen and help write down what is said. But these programs usually need a lot of examples and written words to learn from, which is hard for languages that are not spoken by many people. In this paper, they talk about using a special kind of computer program that doesn't need as much information to learn. It listens to the sounds and tries to write down the words and tones (like the high and low sounds in music that can change the meaning of words). This could help linguists write things down more quickly and not forget recordings. They hope this new way will get better as they use it more.
+
+RESPONSE (1st grade):
+Imagine someone who knows a very special way of talking that only a few people know. It's like a secret code! People who study languages want to write down what these people say so that we can all learn about this secret code. But writing it down takes a very long time because it's like listening to a song and trying to write down every word you hear. Some smart people are trying to make computers help with this. Computers can be quick and can help write down the words from the secret code. But computers need to learn a lot before they can do this, and for some secret codes, they don't know enough yet. The people who study languages are working hard to teach computers better, so they can write down these special words quickly. This way, we won't forget these secret codes, and everyone can learn about them!
+
+RESPONSE (11th grade):
+Language documentation is about recording and writing down native speakers' languages, especially ones that are not widely spoken. This writing part, called transcription, is super important but can take a really long time—like up to two hours just for one minute of talking! Because it's so slow, sometimes recordings don't get transcribed and might be forgotten, which isn't good for preserving languages. Scientists are trying to figure out how to use computers to help transcribe faster, but it's tough for languages that aren't used by many people and don't have lots of written examples. This paper talks about a new way to teach computers to recognize sounds and tones in speech without needing a big dictionary or lots of example sentences, which could help save these rare languages by making transcription easier and quicker.
+
+
+
+REQUEST (with 6th grade response):
+[Select 5 words (terms) from the following text. Choose the words which may be difficult to understand for 6th grade students. Explain these words (???). Write each word and it's explanation on one line, separating the word and explanation by : symbol, use | symbol at the end of each line.]
+
+RESPONSE (terms for 6th grade):
+    linguists : People who study languages and their structures. |
+    recordings : Audio files or tapes that capture sounds or voices. |
+    experimenting : Trying out new methods or ideas to see if they work. |
+    tones : Variations in pitch in speech that can change the meaning of words. |
+    program : A set of instructions for a computer to perform specific tasks. |
+
+REQUEST: Select 5 words (terms) from the following text. Choose the words which may be difficult to understand for children. Explain these words in simple terms. Write each word and it's explanation on one line, separating the word and explanation by : symbol, use | symbol at the end of each line.
+
+RESPONSE (terms for 1st grade):
+    Imagine: Pretend or think about something that isn't real. |
+    special: Very different and not common. |
+    languages: The different ways people talk or write to each other. |
+    computers: Machines that help us do things faster, like a smart phone or laptop. |
+    quick: Doing something very fast. |
+
+REQUEST: Select 5 words (terms) from the following text. Choose the words which may be difficult to understand for 11th grade students. Explain these words in precise and clear manner. Write each word and it's explanation on one line, separating the word and explanation by : symbol, use | symbol at the end of each line.
+
+RESPONSE (terms for 11th grade):
+    Documentation: Recording and preserving information in a detailed and systematic manner. |
+    Transcription: The process of converting spoken words into written text. |
+    Preserve: To maintain or keep something in its original state or in good condition. |
+    Recognize: To identify something or someone from previous encounters or knowledge. |
+    Dictionary: A book or electronic resource containing a selection of the words of a language, usually arranged alphabetically, with definitions, etymologies, pronunciations, and other information. |
+
+
+
+gtp-3.5-turbo (slow)  seed=42  temp=0.7
+---------------------------------------
+
+RESPONSE (6th grade):
+Language documentation involves recording the speech of native speakers and transcribing it. Transcribing is slow and can take a long time. This is a problem because linguists have a lot of recordings to transcribe and some recordings may never get transcribed. Researchers are trying to find better ways for linguists to transcribe speech. They have been working on speech recognition technology that can transcribe speech automatically. However, this technology doesn't work well for endangered languages because it needs a lot of text and data to train the system. In language documentation, there are usually only a few speakers and not much text. In this study, researchers used a different approach called the connectionist temporal classification (CTC) formulation to transcribe speech. This method doesn't need a lot of data and can be more useful for linguists in documenting languages.
+
+RESPONSE (terms):
+Language documentation is about recording how people speak their native languages. Documentation means keeping a record of something.
+Culture: This refers to the customs, traditions, and way of life of a group of people. It's what makes each group unique.
+Valuable: Valuable means something is very important or worth a lot.
+Linguists: Linguists are experts who study and work with languages. They help understand how languages work and change.
+Technology: Technology means tools and machines that help us do things. In this case, it's about using computers to help with language documentation.
+
+
+
+gpt-4  (interactive)
+--------------------
+
+REQUEST: Create a list of keywords for the following text. Briefly explain each keyword.
+
+RESPONSE:
+    Language Documentation: The process of recording and analyzing the speech of native speakers, crucial for preserving and studying languages, especially those less commonly spoken.
+    Transcribing: Converting spoken language into written form. In language documentation, this is a meticulous process that can be time-consuming and requires linguistic expertise.
+    Cultural and Linguistic Resources: Refers to the richness and diversity found in the recordings of native speech, which offer valuable insights into the language and culture.
+    Documentary Linguistics: A field of study focused on documenting and analyzing languages, especially those that are less studied or endangered.
+    Data Graveyards: A term referring to untranscribed recordings that risk being lost or unused, highlighted in the context of linguistic research.
+    Speech Recognition Technology: Computer-based systems designed to recognize and interpret human speech, important in automating transcription processes.
+    Endangered Languages: Languages at risk of falling out of use, often with few native speakers left. Their documentation is crucial for linguistic diversity.
+    Hidden Markov Models (HMMs): A statistical model used in speech recognition technology for creating orthographic transcriptions.
+    Pronunciation Lexicon: A database used in speech recognition containing a large number of words and their pronunciations.
+    Language Model: In speech recognition, this refers to a model trained on text data to predict the likelihood of sequences of words.
+    Tonal Languages: Languages in which tone or pitch variations change the meaning of words. They present unique challenges for speech recognition systems.
+    Phonemic Recognition Tool: A tool designed to recognize and transcribe the basic sound units (phonemes) of a language, useful in language documentation.
+    Connectionist Temporal Classification (CTC): A neural network approach used in speech recognition for direct prediction of phonemes and tones from the acoustic signal.
+    Acoustic Model: In speech recognition, this refers to a model that interprets the acoustic signals of speech, crucial for understanding different voices and sounds.
+    Semi-Automated Workflow: A process that combines automated tools with manual correction, aiming to improve efficiency in tasks like transcription.
+
+
+
+REQUEST: What would be a suitable and recognizable title for this article?
+
+RESPONSE: "Advancing Language Documentation: Integrating Neural Speech Recognition Models for Efficient Transcription of Endangered Languages"
+
+
+
+REQUEST: Simplify this title for 6 year old children audience.
+
+RESPONSE: "A Cool Way to Help Save Rare Languages with Smart Computers"
