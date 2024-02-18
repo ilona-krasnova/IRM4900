@@ -94,6 +94,6 @@ RESPONSE: "Advancing Language Documentation: Integrating Neural Speech Recogniti
 
 
 
-REQUEST: Simplify this title for 6 year old children audience.
+REQUEST: Simplify this title for 6 year old childrens audience.
 
 RESPONSE: "A Cool Way to Help Save Rare Languages with Smart Computers"
