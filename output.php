@@ -2,7 +2,7 @@
 include("begin.php");
 
 $response_id = $_REQUEST['response_id'];
-$match = $_REQUEST['match'];
+$match = isset($_REQUEST['match']) ? $_REQUEST['match'] : false;
 
 // extract data which is already saved to the database in summarise_text.php
 $response = database("SELECT * FROM response WHERE id = ?", "i", $response_id)[0];
@@ -19,9 +19,10 @@ $request_arr = database("SELECT * FROM request WHERE response_id = ?", "i", $res
 
 // get difficulty name based on id
 $difficulty = database("SELECT * FROM difficulty WHERE id = ?", "i", $response['difficulty_id'])[0];
+$difficulty_arr = database("SELECT * FROM difficulty");
 
 // find number of requests for all difficulties of the original text ; group by difficulty id and obtain count
-$request_count = database("SELECT count(*) as cnt, difficulty_id, name FROM request rq JOIN response rs ON (rs.id = rq.response_id) JOIN difficulty d ON (d.id = rs.difficulty_id) WHERE rs.text_id = ? GROUP BY difficulty_id", "i", $text_id);
+$request_count = database("SELECT count(*) as cnt, difficulty_id, name, response_id FROM request rq JOIN response rs ON (rs.id = rq.response_id) JOIN difficulty d ON (d.id = rs.difficulty_id) WHERE rs.text_id = ? GROUP BY difficulty_id", "i", $text_id);
 console_var("COUNT", $request_count);
 
 include("end.php");
@@ -45,7 +46,7 @@ include("end.php");
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rescribe</title>
+        <title>Rescribe: Summary</title>
         <link rel="stylesheet" href="rescribe-css.css">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Dosis:wght@500&family=Quicksand:wght@600&display=swap');
@@ -69,28 +70,57 @@ include("end.php");
             <img src="images/hootGen.svg" alt="Owl pointing at generated AI text" class="genAiOwl">
 
             <div class="genAiText">
-                <?= $response["summary"] ?>
+                <p>
+                <?php
+                    foreach ($difficulty_arr as $diff) {
+                        $exists = false;
+                        foreach ($request_count as $count) {
+                            if ($diff['id'] == $count['difficulty_id']) {
+                                $selected = $count['response_id'] == $response_id;
+                                echo '<a href="output.php?response_id='.$count['response_id'].'" class="difficulty '.($selected?"selected":"").'">'.$count['name'].' ('.$count['cnt'].')</a> &nbsp; ';
+                                $exists = true;
+                            }
+                        }
+                        if (!$exists && $diff['id'] <= 3) {
+                            echo '<a href="javascript:submit_form('.$diff['id'].');">Generate '.$diff['name'].' summary</a> &nbsp; ';
+                            // echo '<a href="summarise_text.php?level='.$diff['id'].'&text='.urlencode($text['original_text']).'">Generate '.$diff['name'].' summary</a> &nbsp; ';
+                        }
+                    }
+                ?>
+                </p>
+                <hr />
+                <p><span style="text-transform:capitalize;"><?= $difficulty['name'] ?></span> Summary</p>
+                <p style="font-size:120%;"><?= $response["summary"] ?></p>
                 <hr />
                 <?php
                     foreach ($keyword_arr as $keyword) {
-                        echo "<p>".$keyword["name"].": ".$keyword["description"]."</p>";
+                        echo "<p><u>".$keyword["name"]."</u>: ".$keyword["description"]."</p>";
                     }
                 ?>
                 <hr />
-                <p>Match: <?= $match ?>%<p>
-                <p>Number of requests for <?= $difficulty['name'] ?> level: <?= count($request_arr) ?></p>
-                <p>Total requests: 
-                    <?php
-                        foreach ($request_count as $count) {
-                            echo "".$count["name"]."=".$count["cnt"]." ";
-                        }
-                    ?>
-                </p>
-                <hr />
+                <?= $match ? "<p>Match: ".$match."%<p>" : "" ?>
+                <!-- <p>Number of requests for <?= $difficulty['name'] ?> level: <?= count($request_arr) ?></p> -->
                 <p>Original Text</p>
                 <div style="opacity:0.5; font-size: 85%"><?= $text["original_text"] ?></div>
             </div>
         </div><!--end of grid container--> 
 
+        <form action="summarise_text.php" id="summarise" method="post">
+            <input type="hidden" name="text" value="<?= $text['original_text'] ?>">
+            <input type="hidden" name="level" id="level" value="2">
+        </form>
+
+        <script>
+            function submit_form(level) {
+                document.getElementById("level").value = level;
+                document.getElementById("summarise").submit();
+            }
+        </script>
+
+        <div style="position:absolute; bottom:20px; width:100%; text-align:center;">
+            <a href="#">Terms of use</a> | 
+            <a href="#">Privacy statement</a> | 
+            <a href="list.php">Response Log</a>
+        </div>
     </body>
 </html>

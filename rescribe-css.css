@@ -19,7 +19,7 @@ body {
 
 .gridContainer {
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 20px);
 
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -82,6 +82,7 @@ body {
     grid-row-start: 1;
     grid-row-end: 1;
     font-family: 'Quicksand', sans-serif;
+    font-size: 200%;
 }
 
 .textAInput {

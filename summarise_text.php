@@ -34,9 +34,9 @@ if (empty($text) || empty($difficulty_level)){
 // An array of tasks based on level
 $task_arr = array(
     "0th element is not used.",
-    "Write a very short (less then 160 words) summary of the following article. You audience is 1st grade school students. Use clear and simple language, even when explaining complex topics. Bias toward short sentences. Avoid jargon.",
-    "Write a very short (less then 160 words) summary of the following article. You audience is 4th grade school students. Use clear and simple language, even when explaining complex topics. Bias toward short sentences. Avoid jargon.",
-    "Write a very short (less then 160 words) summary of the following article. You audience is 8th grade school students. Use clear and simple language, even when explaining complex topics. Avoid jargon.",
+    "Write a very short (less then 160 words) summary of the following article. You audience is 1st grade school students. Use clear and simple language, even when explaining complex topics. Bias toward short sentences. Avoid jargon. Don't start with 'Hey kids!' or 'Hey there!'",
+    "Write a very short (less then 160 words) summary of the following article. You audience is 4th grade school students. Use clear and simple language, even when explaining complex topics. Bias toward short sentences. Avoid jargon. Don't start with 'Hey kids!' or 'Hey there!'",
+    "Write a very short (less then 160 words) summary of the following article. You audience is 8th grade school students. Use clear and simple language, even when explaining complex topics. Avoid jargon. Don't start with 'Hey kids!' or 'Hey there!'",
 );
 
 // Create summary
