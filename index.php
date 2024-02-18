@@ -19,7 +19,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Rescribe</title>
-        <link rel="stylesheet" href="rescribe-css.css">
+        <link rel="stylesheet" href="rescribe-css.css?x=2">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Dosis:wght@500&family=Quicksand:wght@600&display=swap');
         </style>
@@ -44,7 +44,7 @@
             -->
             <form method="post" action="summarise_text.php" class="formElement">
                     <label for="textAI" id="instructions">Please paste the text to simplify into the box below</label>
-                    <textarea class="textAInput" id="textAI" name="text" placeholder="Type text here..."></textarea>
+                    <textarea class="textAInput" id="textAI" name="text" placeholder="Paste text here..."></textarea>
                     <input type="range" min="1" max="3" value="1" class="diffSlider" id="dSlider" name="level" onchange="changingSlider()">
                     
                     <input type="reset" class="clearBtn" value="Clear">
@@ -67,9 +67,10 @@
             let valueOfSlider = document.getElementById("sliderValue");
             valueOfSlider.innerHTML = changeSlider.value;
 
-            if(changeSlider.value == 1){
-                valueOfSlider.innerHTML = "Simple"; 
-            }
+            changingSlider();
+            // if(changeSlider.value == 1){
+            //     valueOfSlider.innerHTML = "Simple"; 
+            // }
 
             function changingSlider() {
                 if(changeSlider.value == 1){

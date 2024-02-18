@@ -2,6 +2,9 @@
 include("begin.php");
 
 $response_id = $_REQUEST['response_id'];
+$match = $_REQUEST['match'];
+
+// extract data which is already saved to the database in summarise_text.php
 $response = database("SELECT * FROM response WHERE id = ?", "i", $response_id)[0];
 console_var("RESPONSE", $response);
 
@@ -11,6 +14,15 @@ console_var("TEXT", $text);
 
 $keyword_arr = database("SELECT * FROM text_keyword WHERE text_id = ?", "i", $text_id);
 console_var("KEYWORD", $keyword_arr);
+
+$request_arr = database("SELECT * FROM request WHERE response_id = ?", "i", $response_id);
+
+// get difficulty name based on id
+$difficulty = database("SELECT * FROM difficulty WHERE id = ?", "i", $response['difficulty_id'])[0];
+
+// find number of requests for all difficulties of the original text ; group by difficulty id and obtain count
+$request_count = database("SELECT count(*) as cnt, difficulty_id, name FROM request rq JOIN response rs ON (rs.id = rq.response_id) JOIN difficulty d ON (d.id = rs.difficulty_id) WHERE rs.text_id = ? GROUP BY difficulty_id", "i", $text_id);
+console_var("COUNT", $request_count);
 
 include("end.php");
 ?>
@@ -56,143 +68,29 @@ include("end.php");
 
             <img src="images/hootGen.svg" alt="Owl pointing at generated AI text" class="genAiOwl">
 
-            <?php
-            
-            //Checking that the textarea is set/ empty. If set the contents of the textarea are saved in var, else echo "empty"
-            if (isset($_POST['textArea'])) {
-                $userInputVal = $_POST['textArea'];
-            } else {
-                echo "textarea is empty";
-            }
-
-            //remember to define api key when using/ testing the application (Remember to add the key again)
-            $apiKey = "add key";
-            
-            $chatCompletions = "https://api.openai.com/v1/chat/completions"; 
-
-            //Chat completions: https://platform.openai.com/docs/api-reference/chat/object 
-            $headers = array(
-                "Content-Type: application/json", 
-                "Authorization: Bearer ".$apiKey
-            );
-
-            $data = array (
-                "model" => "gpt-3.5-turbo", 
-                "messages" => array(
-                    array(
-                        "role" => "system", 
-                        "content" => "Writing style guideline: Write a brief summary at a 6th grade level. Use clear and simple language, even when explaining complex topics. Bias toward short sentences. Avoid jargon."
-                    ),
-                    array(
-                        "role" => "user", 
-                        "content" => $userInputVal
-                    )));
-
-            $jsonData = json_encode($data); 
-    
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, $chatCompletions);
-            curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers); 
-            $res = curl_exec($ch); 
-            curl_close($ch);
-
-            //decodeing json data to store it in php var 
-            $finalRes = json_decode($res, true); 
-            $finalfinal = $finalRes['choices'][0]['message']['content'];
-            
-            //echo $finalfinal; test
-            //print ChatGPT response to the webpage for the user to view.
-            echo '<div class="genAiText">';
-            echo $text["original_text"];
-            echo "<hr />";
-            echo $response["summary"];
-            echo "<hr />";
-            foreach ($keyword_arr as $keyword) {
-                echo "<p>".$keyword["name"].": ".$keyword["description"]."</p>";
-            }
-            echo '</div>';
-
-            /*setting up a db connection using infinityfree parameters. Perform an INSERT function to store the request,
-            response, difficulty etc into the database's table in the table's corressponding columns. 
-            UPDATE: db parameters to fit finalized db and its tables 
-            */
-            $dbConnection = mysqli_connect("sql104.infinityfree.com","if0_35369435","x1MUb2Zoh9","if0_35369435_4900");
-
-            if ($dbConnection->connect_error){
-                die("Connection failed: " .$dbConnection->connect_error);
-            }
-
-            $userInputVal = $_POST['textArea'];
-            $userInputDiff = $_POST['slider'];
-
-            //get timestamp
-            $timestamp = date("Y-m-d H:i:s");
-
-            //INSERT statement into the Text table 
-            $sqlParentText = "INSERT INTO `text` (`original_text`) VALUES ('Value1')";
-            if ($dbConnection->query($sqlParentText) === TRUE) {
-                $getParentIdText = $dbConnection->insert_id; // Get the auto-incremented primary key
-            } else {
-                echo "Error inserting into Text table: " . $dbConnection->error;
-            }
-
-            //INSERT statement into the Text_keyword table (Child of text table)
-            $sqlChildTextK = "INSERT INTO `text_keyword` (`text_id`, `name`, `description`) VALUES ('$getParentIdText', 'ChildValue1', 'ChildValue2')";
-            if ($dbConnection->query($sqlChildTextK) === TRUE) {
-                //echo "Data inserted successfully into Text_keyword table";
-            } else {
-                echo "Error inserting into Text_keywords table: " . $dbConnection->error;
-            }
-
-            //INSERT statement into the Difficulty table 
-            $sqlParentDiff = "INSERT INTO `difficulty` (`name`, `description`) VALUES ('Value1', 'Value2')";
-            if ($dbConnection->query($sqlParentDiff) === TRUE) {
-                $getParentIdDiff = $dbConnection->insert_id; // Get the auto-incremented primary key
-            } else {
-                echo "Error inserting into Difficulty table: " . $dbConnection->error;
-            }
-
-            //INSERT statement into the Response table (Child of text/difficulty table)
-            $sqlChildResponse = "INSERT INTO `response` (`text_id`, `difficulty_id`, `summary`) VALUES ('$getParentIdText', '$getParentIdDiff', 'ChildValue2')";
-            if ($dbConnection->query($sqlChildResponse) === TRUE) {
-                $getParentIdRes = $dbConnection->insert_id; // Get the auto-incremented primary key
-                //echo "Data inserted successfully into Response table";
-            } else {
-                echo "Error inserting into Response table: " . $dbConnection->error;
-            }
-
-            //INSERT statement into the Request table (Child of response table)
-            $sqlChildRequest = "INSERT INTO `request` (`response_id`, `timestamp`) VALUES ('$getParentIdRes', '$timestamp')";
-            if ($dbConnection->query($sqlChildRequest) === TRUE) {
-                //echo "Data inserted successfully into Request table";
-            } else {
-                echo "Error inserting into Request table: " . $dbConnection->error;
-            }
-
-            //checking db if generated text is saved in the database or not. If saved mysqli_num_rows will count the number of rows that have a match.
-            $sqlSearchStatement = "SELECT * FROM `text` WHERE `original_text` = '$userInputVal'"; 
-            $dbSConnection = mysqli_query($dbConnection, $sqlSearchStatement);
-            $countRequest = mysqli_num_rows($dbSConnection);
-
-            //counting the number of identical requests and print the row count to user.
-            if($countRequest == 1) {
-                echo '<div class="countDiv">';
-                echo "First Request";
-                echo '</div>';
-            }else {
-                echo '<div class="countDiv">';
-                echo "Overall count of requests: $countRequest";
-                echo '</div>';
-            }
-
-            mysqli_close($dbConnection); //closing the db connection 
-
-            ?><!--end of php code-->
-    
-
+            <div class="genAiText">
+                <?= $response["summary"] ?>
+                <hr />
+                <?php
+                    foreach ($keyword_arr as $keyword) {
+                        echo "<p>".$keyword["name"].": ".$keyword["description"]."</p>";
+                    }
+                ?>
+                <hr />
+                <p>Match: <?= $match ?>%<p>
+                <p>Number of requests for <?= $difficulty['name'] ?> level: <?= count($request_arr) ?></p>
+                <p>Total requests: 
+                    <?php
+                        foreach ($request_count as $count) {
+                            echo "".$count["name"]."=".$count["cnt"]." ";
+                        }
+                    ?>
+                </p>
+                <hr />
+                <p>Original Text</p>
+                <div style="opacity:0.5; font-size: 85%"><?= $text["original_text"] ?></div>
+            </div>
         </div><!--end of grid container--> 
+
     </body>
 </html>

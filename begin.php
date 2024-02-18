@@ -44,13 +44,17 @@ function console_var($label, $var) {
 // send http post request to chat gpt
 function ask_chat_gpt($instructions) {
     global $apiurl, $apikey;
+    $instructions = str_replace(array("\n", "\r"), " ", $instructions);
+    $instructions = trim($instructions);
+
+    // $model = "gpt-3.5-turbo";
+    $model = "gpt-4-1106-preview";
+    // $model = "gpt-4";
 
     // prepare request
     // seed makes chat gpt produce similar output for the same request
     // temperature controls variability
-
-    // $model = "gpt-3.5-turbo";
-    $model = "gpt-4-1106-preview";
+    
     $json = 
 '{
     "model": "'.$model.'",
