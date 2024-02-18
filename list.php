@@ -25,5 +25,5 @@ include("end.php");
                 }
             } 
         ?>
-  </body
+  </body>
 </html>
