@@ -1,16 +1,17 @@
 <?php 
 include("begin.php");
 $responses = database("SELECT r.id as rid, summary, difficulty_id, original_text, text_id FROM response r JOIN text t on (t.id = r.text_id) ORDER BY t.id DESC, r.difficulty_id DESC LIMIT 100");
-
-console_var("RESPONSES", $responses);
+// console_var("RESPONSES", $responses); 
 include("end.php");
 ?>
 
 <html>
     <head>
         <title>Rescribe: Response Log</title>
+        <link rel="icon" href="images/icons8-feather-48.png" />
     </head>
     <body>
+        <?php include("header.php"); ?>
         <h3>Last 100 responses</h3>
         <?php
             $last_text_id = 0;
@@ -25,5 +26,6 @@ include("end.php");
                 }
             } 
         ?>
+        <p><?php include("footer.php") ?></p>
   </body>
 </html>

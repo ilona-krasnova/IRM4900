@@ -51,23 +51,18 @@ include("end.php");
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Dosis:wght@500&family=Quicksand:wght@600&display=swap');
         </style>
+        <link rel="icon" href="images/icons8-feather-48.png" />
     </head>
     
     <body>
 
         <!--Website toolbar: allows user the ability to redirect to other pages of the website-->
         <div class="gridContainer">
-            <div class="header">
-                <img src="images/icons8-feather-48.png" class="featherIcon" alt="Rescribe icon - a feather">        
-                <a href="index.php" id="rescribe">RESCRIBE</a>
-                    <div class="headerRight">
-                        <a href="index.php">HOME</a>
-                        <a href="rescribe-about.html">ABOUT</a>
-                        <a href="rescribe-contact.html">CONTACT</a>
-                    </div><!--headerRight end-->
-            </div><!--header end-->
+            <?php include("header.php"); ?>
 
             <img src="images/hootGen.svg" alt="Owl pointing at generated AI text" class="genAiOwl">
+
+            <h1 class="aboutHeader">Summary</h1>
 
             <div class="genAiText">
                 <p>
@@ -92,9 +87,10 @@ include("end.php");
                 <p><span style="text-transform:capitalize;"><?= $difficulty['name'] ?></span> Summary</p>
                 <p style="font-size:120%;"><?= $response["summary"] ?></p>
                 <hr />
+                <p>Keywords</p>
                 <?php
                     foreach ($keyword_arr as $keyword) {
-                        echo "<p><u>".$keyword["name"]."</u>: ".$keyword["description"]."</p>";
+                        echo '<p><span style="text-transform:capitalize;">'.$keyword["name"].'</span>: <span style="opacity:65%;">'.$keyword["description"].'</span></p>';
                     }
                 ?>
                 <hr />
@@ -103,10 +99,13 @@ include("end.php");
                 <p>Original Text</p>
                 <div style="opacity:0.5; font-size: 85%"><?= $text["original_text"] ?></div>
             </div>
+
+            <?php include("footer.php"); ?>
+            
         </div><!--end of grid container--> 
 
         <form action="summarise_text.php" id="summarise" method="post">
-            <input type="hidden" name="text" value="<?= $text['original_text'] ?>">
+            <input type="hidden" name="text" value="<?= str_replace('"', "'", $text['original_text']) ?>">
             <input type="hidden" name="level" id="level" value="2">
         </form>
 
@@ -116,11 +115,5 @@ include("end.php");
                 document.getElementById("summarise").submit();
             }
         </script>
-
-        <div style="position:absolute; bottom:20px; width:100%; text-align:center;">
-            <a href="#">Terms of use</a> | 
-            <a href="#">Privacy statement</a> | 
-            <a href="list.php">Response Log</a>
-        </div>
     </body>
 </html>

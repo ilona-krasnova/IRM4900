@@ -23,24 +23,20 @@
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Dosis:wght@500&family=Quicksand:wght@600&display=swap');
         </style>
+        <link rel="icon" href="images/icons8-feather-48.png" />
     </head>
 
     <body>
 
          <!--Website toolbar: allows user the ability to redirect to other pages of the website-->
         <div class="gridContainer">
-            <div class="header">
-                <img src="images/icons8-feather-48.png" class="featherIcon" alt="Rescribe icon - a feather">        
-                <a href="index.php" id="rescribe">RESCRIBE</a>
-                    <div class="headerRight">
-                        <a href="index.php">HOME</a>
-                        <a href="rescribe-about.html">ABOUT</a>
-                        <a href="rescribe-contact.html">CONTACT</a>
-                    </div><!--headerRight end-->
-            </div><!--header end-->
+                
+            <?php include("header.php"); ?>
+
+            <h1 class="aboutHeader">Generate text summary</h1>
 
             <!--HTML form that uses a HTTP post request to send user request/ API request.
-                The form data is sent for processing to a PHP file "output.php".
+                The form data is sent for processing to a PHP file "summarise_text.php".
             -->
             <form method="post" action="summarise_text.php" class="formElement">
                     <label for="textAI" id="instructions">Please paste the text to simplify into the box below</label>
@@ -55,6 +51,7 @@
 
             <img src="images/hoot.svg" alt="Owl mascot" class="homepageOwl">
 
+            <?php include("footer.php"); ?>
 
         </div><!--end of grid container--> 
 

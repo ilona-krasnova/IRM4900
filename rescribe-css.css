@@ -82,7 +82,7 @@ body {
     grid-row-start: 1;
     grid-row-end: 1;
     font-family: 'Quicksand', sans-serif;
-    font-size: 200%;
+    font-size: 150%;
 }
 
 .textAInput {
@@ -175,7 +175,7 @@ body {
 .aboutPara {
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
-    line-height: 300%;
+    line-height: 200%;
     grid-column-start: 2;
     grid-column-end: 9;
     grid-row-start: 3;
@@ -206,7 +206,7 @@ body {
 .contactPara {
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
-    line-height: 300%;
+    line-height: 200%;
     grid-column-start: 2;
     grid-column-end: 11;
     grid-row-start: 3;
@@ -382,4 +382,18 @@ body {
     grid-row-start: 12;
     grid-row-end: 12;
     background-color: white;
+}
+
+.footer {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    color: black;
+    font-size: 14px;
+    grid-column-start: 2;
+    grid-column-end: 9;
+    grid-row-start: 12;
+    grid-row-end: 12;
+    padding-top: 40px;
+    /* vertical-align: middle; */
+    text-align: center;
 }

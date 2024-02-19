@@ -2,15 +2,19 @@
 <html>
 <head>
     <title>Rescribe: processing</title>
+    <link rel="icon" href="images/icons8-feather-48.png" />
   </head>
    <body>
+        <?php include("header.php") ?>
         <pre style="font-size: 200%;">
+  
+     ^...^      Please wait while I'm processing!
+    / o,o \
+    |):::(|
+  ====w=w===
 
-                 ^...^      Processing!
-                / o,o \
-                |):::(|
-              ====w=w===
         </pre>
+        <?php include("footer.php") ?>
     </body>
 </html>
 
@@ -31,12 +35,16 @@ if (empty($text) || empty($difficulty_level)){
     exit();
 }
 
-// An array of tasks based on level
+// An array of tasks (Chat GPT prompts) based on level
 $task_arr = array(
-    "0th element is not used.",
-    "Write a very short (less then 160 words) summary of the following article. You audience is 1st grade school students. Use clear and simple language, even when explaining complex topics. Bias toward short sentences. Avoid jargon. Don't start with 'Hey kids!' or 'Hey there!'",
+    // 0th element is not used.
+    "",
+    // simple
+    "Write a very short (less then 160 words) summary of the following article. You audience is 1st grade school students. Use clear and simple language, even when explaining complex topics. Bias toward short sentences. Avoid jargon. Don't start with 'Hey kids!' or 'Hey there!'", 
+    // medium
     "Write a very short (less then 160 words) summary of the following article. You audience is 4th grade school students. Use clear and simple language, even when explaining complex topics. Bias toward short sentences. Avoid jargon. Don't start with 'Hey kids!' or 'Hey there!'",
-    "Write a very short (less then 160 words) summary of the following article. You audience is 8th grade school students. Use clear and simple language, even when explaining complex topics. Avoid jargon. Don't start with 'Hey kids!' or 'Hey there!'",
+    // complex
+    "Write a very short (less then 200 words) summary of the following article. You audience is 8th grade school students. Use clear and simple language, even when explaining complex topics. Avoid jargon. Don't start with 'Hey kids!' or 'Hey there!'", 
 );
 
 // Create summary
@@ -86,7 +94,7 @@ $min_text_id = 0;
 foreach($similar_text_count as $text_count) {
     // get text for matching keywords
     $old_text = database("SELECT * FROM text WHERE id = ?", "i", $text_count['text_id'])[0];
-    // calculate Levenshtein distance
+    // calculate Levenshtein distance https://en.wikipedia.org/wiki/Levenshtein_distance
     $lev_dist = levenshtein($text, $old_text['original_text']);
     $perc = ($lev_dist * 100.0) / strlen($text);
     console_log("DIST", "".$lev_dist."/".strlen($text)."=".$perc."%");

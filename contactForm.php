@@ -18,29 +18,27 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rescribe</title>
+        <title>Rescribe: Contact</title>
         <link rel="stylesheet" href="rescribe-css.css">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Dosis:wght@500&family=Quicksand:wght@600&display=swap');
         </style>
+        <link rel="icon" href="images/icons8-feather-48.png" />
     </head>
 
     <body>
 
         <!--Website toolbar: allows user the ability to redirect to other pages of the website-->
         <div class="gridContainer">
-            <div class="header">
-                <img src="images/icons8-feather-48.png" class="featherIcon" alt="Rescribe icon - a feather">        
-                <a href="#name" id="rescribe">RESCRIBE</a>
-                    <div class="headerRight">
-                        <a href="index.php">HOME</a>
-                        <a href="rescribe-about.html">ABOUT</a>
-                        <a href="rescribe-contact.html">CONTACT</a>
-                    </div><!--headerRight end-->
-            </div><!--header end-->
+        
+            <?php include("header.php"); ?>
 
-            <h1>Form submitted</h1>
-       
+            <h1 class="thankYouMes">THANK YOU FOR WRITING US</h1>
+            <p class="userMes">Dear user, we got your request and we will be in touch.</p>
+
+            <img src="images/hootContactSub.svg" alt="Owl mascot" class="contactOwlSub">
+
+            <?php include("footer.php"); ?>       
 
         </div><!--end of grid container--> 
 
