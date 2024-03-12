@@ -19,7 +19,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Rescribe</title>
-        <link rel="stylesheet" href="rescribe-css.css?x=2">
+        <link rel="stylesheet" href="styles.css?x=2">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Dosis:wght@500&family=Quicksand:wght@600&display=swap');
         </style>
