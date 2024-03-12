@@ -41,12 +41,14 @@
             <!--HTML form that uses a HTTP post request to send user request (e.g., user inquiry or feedback)
                 The form data is sent for processing to a PHP file "contactForm.php".
             -->
-            <form method="post" action="contactForm.php" class="conForm">
-                <label for="conTextAI" id="contactFormLabel1">Contact Textarea</label>
-                <textarea class="conTextA" id="conTextAI" name="conTextArea" placeholder="Enter your message..."></textarea>
-                <input type="reset" class="clearBtn2" value="Clear">
-                <button type="submit" class="sendBtn">Send</button>
-            </form>
+            <img src="images/icons8-email-100.png" alt="Email icon" class="emailIcon">
+            <p class="emailPara">Rescribe@Rescribe.ca</p>
+
+            <img src="images/icons8-phone-100.png" alt="Phone icon" class="phoneIcon">
+            <p class="phonePara">(613) 520-2600</p>
+
+            <img src="images/icons8-location-100.png" alt="Address icon" class="addressIcon">
+            <p class="addressPara">1125 Colonel By Dr, Ottawa, ON</p>
 
             <img src="images/hootContact.svg" alt="Owl mascot" class="contactOwl">
 
