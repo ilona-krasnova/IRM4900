@@ -213,73 +213,6 @@ body {
     grid-row-end: 4;
 }
 
-.conForm {
-    grid-column-start: 2;
-    grid-column-end: 9;
-    grid-row-start: 4;
-    grid-row-end: 12;
-
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: repeat(9, 1fr);
-}
-
-#contactFormLabel1 {
-    color: #FF8360;
-    grid-column-start: 1;
-    grid-column-end: 8;
-    grid-row-start: 1;
-    grid-row-end: 1;
-    font-family: 'Quicksand', sans-serif;
-}
-
-.conTextA {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    color: black;
-    padding: 30px;
-    border-radius: 20px;
-    border: none;
-    resize: none;
-    font-size: 18px;
-    grid-column-start: 1;
-    grid-column-end: 8;
-    grid-row-start: 2;
-    grid-row-end: 7;
-    padding-bottom: 30px;
-}
-
-.sendBtn {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-    color: black;
-    background-color: #7DCE82;
-    border-radius: 50px;
-    border: none;
-    grid-column-start: 2;
-    grid-column-end: 4;
-    grid-row-start: 8;
-    grid-row-end: 8;
-    letter-spacing: 2px;
-}
-
-.clearBtn2 {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-    color: black;
-    background-color: #FF8360;
-    border-radius: 50px;
-    border: none;
-    grid-column-start: 5;
-    grid-column-end: 7;
-    grid-row-start: 8;
-    grid-row-end: 8;
-    letter-spacing: 2px;   
-}
-
 .contactOwl {
     grid-column-start: 8;
     grid-column-end: 12;
@@ -289,59 +222,64 @@ body {
     height: auto;
 }
 
-/*Submission page css - contact page*/
-.contactSubHeader {
-    color: #4F3A5A;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    letter-spacing: 5px;
-    grid-column-start: 2;
-    grid-column-end: 10;
-    grid-row-start: 3;
-    grid-row-end: 4;
-}
-
-.contactSubPara {
+.addressPara {
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
-    line-height: 300%;
-    grid-column-start: 2;
-    grid-column-end: 10;
-    grid-row-start: 4;
-    grid-row-end: 5;
-
-}
-
-.thankYouMes {
-    color: #4F3A5A;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    line-height: 300%;
-    grid-column-start: 2;
+    line-height: 200%;
+    grid-column-start: 3;
     grid-column-end: 7;
-    grid-row-start: 4;
-    grid-row-end: 6;
-    font-size: 40px;
-}
-
-.userMes {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    line-height: 300%;
-    grid-column-start: 2;
-    grid-column-end: 7;
-    grid-row-start: 6;
+    grid-row-start: 5;
     grid-row-end: 7;
-    font-size: 19px;
+    font-size: 17;
 }
 
-.contactOwlSub {
-    grid-column-start: 8;
-    grid-column-end: 13;
-    grid-row-start: 4;
+.addressIcon {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 5;
+    grid-row-end: 7;
+    width: 72px;
+    height: 72px;
+}
+
+.phonePara {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    line-height: 200%;
+    grid-column-start: 3;
+    grid-column-end: 7;
+    grid-row-start: 7;
     grid-row-end: 9;
-    width: 100%;
-    height: auto;
+    font-size: 17;
+}
+
+.phoneIcon {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 7;
+    grid-row-end: 9;
+    width: 72px;
+    height: 72px;
+}
+
+.emailPara {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    line-height: 200%;
+    grid-column-start: 3;
+    grid-column-end: 7;
+    grid-row-start: 9;
+    grid-row-end: 11;
+    font-size: 17;
+}
+
+.emailIcon {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 9;
+    grid-row-end: 11;
+    width: 72px;
+    height: 72px;
 }
 
 /*Submission page css - home page*/
