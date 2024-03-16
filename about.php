@@ -9,7 +9,7 @@
     - Lead Developer/AI: Ilona Krasnova | 101211529
     - UI/UX Designer: Morgan Gardiner | 101024884
 
-    - Rescribe's about page. Used to explain the users Rescribe's purpose, mission and how to use its features. 
+    - About Rescribe/ the web application's intended use
 -->
 
     <html lang="en">
