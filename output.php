@@ -55,16 +55,13 @@ include("end.php");
     </head>
     
     <body>
+    
+        <?php include("header.php"); ?>
 
-        <!--Website toolbar: allows user the ability to redirect to other pages of the website-->
-        <div class="gridContainer">
-            <?php include("header.php"); ?>
-
-            <img src="images/hootGen.svg" alt="Owl pointing at generated AI text" class="genAiOwl">
-
-            <h1 class="aboutHeader">Summary</h1>
-
-            <div class="genAiText">
+        <div class="twoThirdLayout">
+            <div class="mainLayout">
+                <h1 class="pageHeader">Summary</h1>
+                <div class="pagePara">
                 <p>
                 <?php
                     foreach ($difficulty_arr as $diff) {
@@ -99,11 +96,17 @@ include("end.php");
                 <p>Original Text</p>
                 <div style="opacity:0.5; font-size: 85%"><?= $text["original_text"] ?></div>
             </div>
-
-            <?php include("footer.php"); ?>
             
-        </div><!--end of grid container--> 
+            </div><!--end of main layout-->
 
+            <div class="sideLayout">
+                <img src="images/hootGen.svg" alt="Owl pointing at generated AI text" class="sideLayoutOwl">
+            </div><!--end of sideLayout-->        
+        
+        </div><!--end of two-third layout-->
+
+        <?php include("footer.php"); ?>
+            
         <form action="summarise_text.php" id="summarise" method="post">
             <input type="hidden" name="text" value="<?= str_replace('"', "'", $text['original_text']) ?>">
             <input type="hidden" name="level" id="level" value="2">
