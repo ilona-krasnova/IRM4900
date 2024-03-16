@@ -27,6 +27,7 @@
     </head>
 
     <body>
+        <!--Website toolbar: allows user the ability to redirect to other pages of the website-->
         <?php include("header.php"); ?>
 
         <div class="twoThirdLayout">
