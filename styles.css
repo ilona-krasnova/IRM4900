@@ -1,91 +1,105 @@
-/*
-- IRM4900 Capstone Project - Fall 2023/ Winter 2024
-- Using Generative Artificial Intelligence for Age-Appropriate Text Summarization
-
-- Team Members  
-- Technical Lead: Jamila Johnson | 101206365
-- Documentation: Phoebe Chong | 101075924 
-- Lead Developer/AI: Ilona Krasnova | 101211529
-- UI/UX Designer: Morgan Gardiner | 101024884
-
-- CSS stylesheet for all of Rescribe's pages
-- Pages uses grid container layout to map out HTML elements 
-*/
-
-body {
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
     margin: 0;
+    padding: 0;
     background-color:#EFEDEB;
-}
+  }
 
-.gridContainer {
-    width: 100vw;
-    height: calc(100vh - 20px);
-
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-}
-
-.header {
-    grid-column-start: 1;
-    grid-column-end: 13;
-    grid-row-start: 1;
-    grid-row-end: 1;
+  /*Website header - navigation*/
+  .header {
+    display: flex;
     background-color: #32CBFF;
-    padding: 10px 30px 10px 10px;
-    
-}
-  
-.header a {
+    padding-bottom: 10px;
+  }
+
+  .header a {
     text-decoration: none;
-    font-stretch: expanded;
-    padding-right: 25px;
+    background-color: transparent;
     color: #4F3A5A;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 400;
-    letter-spacing: 3px;
-    font-size: 25px;
-}
-
-#rescribe {
-    letter-spacing: 10px;
-    font-family: 'Dosis', sans-serif;
-    font-weight: 500;
+    padding-right: 35px;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 600;
+    align-self: center;
     font-size: 27px;
-}
+  }
+
+  #rescribe {
+    display: flex;
+    flex: 1;
+    padding-left: 6px;
+    letter-spacing: 5px;
+    font-size: 35px;
+    font-family: "Dosis", sans-serif;
+    font-weight: 600;
+  }
+
+  .featherIcon {
+    width: 30px;
+    height: 30px;
+    padding-top: 3px;
+    margin-right: 5px;
+    margin-top: 6px;
+    background-color: #32CBFF;
+  }
+ 
+  .homepageRow {  
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 85vh;
+  }
+
+  /*Collective styles - two-third layout*/
+  .pageHeader {
+    color: #4F3A5A;
+    font-family: "Dosis", sans-serif;
+    font-weight: 600;
+    letter-spacing: 5px;
+    padding-left: 10%;
+  }
+
+  #subHeader {
+    color: #4F3A5A;
+    font-family: "Dosis", sans-serif;
+    font-weight: 600;
+    letter-spacing: 5px;
+  }
   
-.headerRight {
-    float: right;
-}
-
-.featherIcon {
-    width: 22px;
-    height: 22px;
-}
-
-/*Home page css*/
-.formElement {
-    grid-column-start: 2;
-    grid-column-end: 9;
-    grid-row-start: 3;
-    grid-row-end: 12;
-
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: repeat(9, 1fr);
-}
-
-#instructions {
-    color: #62466B;
-    grid-column-start: 1;
-    grid-column-end: 10;
-    grid-row-start: 1;
-    grid-row-end: 1;
+  .pagePara {
     font-family: 'Quicksand', sans-serif;
-    font-size: 150%;
-}
+    font-weight: 600;
+    line-height: 200%;
+    padding-left: 10%;
+  }
+  
+  .sideLayoutOwl {
+    width: 100%;
+  }
 
-.textAInput {
+  .twoThirdLayout {  
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .mainLayout {
+    flex: 65%;
+  }
+  
+  .sideLayout {
+    flex: 35%;
+  }
+
+  /*Hompage - Form layout*/
+  .formElement {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10%;
+    gap: 25px;
+  }
+
+  .textAInput {
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
     color: black;
@@ -94,34 +108,18 @@ body {
     border: none;
     resize: none;
     font-size: 16px;
-    grid-column-start: 1;
-    grid-column-end: 10;
-    grid-row-start: 2;
-    grid-row-end: 8;
-}
+  }
 
-.diffSlider {
-    padding: 30px;
-    grid-column-start: 5;
-    grid-column-end: 7;
-    grid-row-start: 8;
-    grid-row-end: 8;
-}
-
-#sliderValue {
+  #sliderValue {
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
     padding: 30px;
     font-size: 17px;
     padding: 30px;
-    grid-column-start: 4;
-    grid-column-end: 4;
-    grid-row-start: 10;
-    grid-row-end: 10;
     letter-spacing: 2px;
-}
+  }
 
-.genBtn {
+  .genBtn {
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
     font-size: 15px;
@@ -129,14 +127,10 @@ body {
     background-color: #7DCE82;
     border-radius: 50px;
     border: none;
-    grid-column-start: 3;
-    grid-column-end: 5;
-    grid-row-start: 9;
-    grid-row-end: 9;
     letter-spacing: 2px;
-}
+  }
 
-.clearBtn {
+  .clearBtn {
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
     font-size: 15px;
@@ -144,194 +138,135 @@ body {
     background-color: #FF8360;
     border-radius: 50px;
     border: none;
-    grid-column-start: 6;
-    grid-column-end: 8;
-    grid-row-start: 9;
-    grid-row-end: 9;
     letter-spacing: 2px; 
-}
+  }
 
-.homepageOwl {
-    grid-column-start: 9;
-    grid-column-end: 13;
-    grid-row-start: 4;
-    grid-row-end: 9;
-    width: 100%;
-    height: auto;
-}
-
-/*About page css*/
-.aboutHeader {
-    color: #62466B;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    letter-spacing: 5px;
-    grid-column-start: 2;
-    grid-column-end: 10;
-    grid-row-start: 2;
-    grid-row-end: 2;
-}
-
-.aboutPara {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    line-height: 200%;
-    grid-column-start: 2;
-    grid-column-end: 9;
-    grid-row-start: 3;
-    grid-row-end: 4;
-}
-
-.aboutOwl {
-    grid-column-start: 9;
-    grid-column-end: 13;
-    grid-row-start: 3;
-    grid-row-end: 6;
-    width: 100%;
-    height: auto;
-}
-
-/*Contact page css*/
-.contactHeader {
-    color: #4F3A5A;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    letter-spacing: 5px;
-    grid-column-start: 2;
-    grid-column-end: 5;
-    grid-row-start: 2;
-    grid-row-end: 2;
-}
-
-.contactPara {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    line-height: 200%;
-    grid-column-start: 2;
-    grid-column-end: 11;
-    grid-row-start: 3;
-    grid-row-end: 4;
-}
-
-.contactOwl {
-    grid-column-start: 8;
-    grid-column-end: 12;
-    grid-row-start: 4;
-    grid-row-end: 8;
-    width: 100%;
-    height: auto;
-}
-
-.addressPara {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    line-height: 200%;
-    grid-column-start: 3;
-    grid-column-end: 7;
-    grid-row-start: 5;
-    grid-row-end: 7;
-    font-size: 17;
-}
-
-.addressIcon {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 5;
-    grid-row-end: 7;
-    width: 72px;
-    height: 72px;
-}
-
-.phonePara {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    line-height: 200%;
-    grid-column-start: 3;
-    grid-column-end: 7;
-    grid-row-start: 7;
-    grid-row-end: 9;
-    font-size: 17;
-}
-
-.phoneIcon {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 7;
-    grid-row-end: 9;
-    width: 72px;
-    height: 72px;
-}
-
-.emailPara {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    line-height: 200%;
-    grid-column-start: 3;
-    grid-column-end: 7;
-    grid-row-start: 9;
-    grid-row-end: 11;
-    font-size: 17;
-}
-
-.emailIcon {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 9;
-    grid-row-end: 11;
-    width: 72px;
-    height: 72px;
-}
-
-/*Submission page css - home page*/
-.genAiText {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    color: black;
-    padding: 30px;
-    border-radius: 20px;
-    font-size: 16px;
-    grid-column-start: 2;
-    grid-column-end: 9;
-    grid-row-start: 3;
-    grid-row-end: 12;
-    background-color: white;
-    overflow: auto;
-}
-
-.genAiOwl {
-    grid-column-start: 9;
-    grid-column-end: 13;
-    grid-row-start: 4;
-    grid-row-end: 8;
-    width: 100%;
-    height: auto;
-}
-
-.countDiv {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    color: black;
-    padding: 30px;
-    margin-top: 10px;
-    border-radius: 20px;
-    font-size: 14px;
-    grid-column-start: 2;
-    grid-column-end: 9;
-    grid-row-start: 12;
-    grid-row-end: 12;
-    background-color: white;
-}
-
-.footer {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    color: black;
-    font-size: 14px;
-    grid-column-start: 2;
-    grid-column-end: 12;
-    grid-row-start: 12;
-    grid-row-end: 12;
-    padding-top: 40px;
-    /* vertical-align: middle; */
+  /*Collective styles - Center layout*/
+  .centerLayout {  
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
     text-align: center;
-}
+  }
+
+  .centerMainLayout, .centerLayoutImage  {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .centerPageHeader {
+    color: #4F3A5A;
+    font-family: "Dosis", sans-serif;
+    font-weight: 600;
+    letter-spacing: 5px;
+  }
+
+  .centerPagePara {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    line-height: 200%;
+  }
+
+  /*Contact us page - icon/ images*/
+  .contactIcons {
+    display: flex;
+    justify-content: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    width: 100%;
+  }
+
+  .centerLayoutOwl {
+    width: 27%;
+    border: blue solid 2px;
+  }
+
+  .emailIcon {
+    width: 30px;
+    height: 30px;
+    margin: 10px 10px 0px 10px;
+  }
+
+    /*Log Response*/
+  .pageHeaderLogR {
+    color: #4F3A5A;
+    font-family: "Dosis", sans-serif;
+    font-weight: 600;
+    letter-spacing: 5px;
+    padding-left: 6%;
+  }
+
+  /*Footer*/
+  .footer {
+    display: flex;
+    flex: 1; 
+    justify-content: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    padding-top: 40px;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .footer a {
+    color: #4F3A5A;
+    background-color: transparent;
+  }
+
+  /*Responsive layout*/
+  @media screen and (max-width: 700px) {
+
+    .header {
+      flex-direction: column;   
+    }
+
+    .twoThirdLayout {
+      flex-direction: column;
+    }
+
+    .mainLayout {
+      padding-right: 10%;
+    }
+
+    .sideLayoutOwl {
+      width: auto;
+      float: right;
+    }
+
+    #rescribe {
+      border-bottom: #4F3A5A solid 2px;
+    }
+
+    .centerLayout {
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+
+    .contactIcons {
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+
+    .contactIcons {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      align-content: center;
+      text-align: center;
+    }
+
+ 
+  }
+
+
