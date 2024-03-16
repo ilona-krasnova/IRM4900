@@ -1,3 +1,17 @@
+/*
+- IRM4900 Capstone Project - Fall 2023/ Winter 2024
+- Using Generative Artificial Intelligence for Age-Appropriate Text Summarization
+
+- Team Members  
+- Technical Lead: Jamila Johnson | 101206365
+- Documentation: Phoebe Chong | 101075924 
+- Lead Developer/AI: Ilona Krasnova | 101211529
+- UI/UX Designer: Morgan Gardiner | 101024884
+
+- CSS stylesheet for all of Rescribe's pages
+- Pages uses a flexbox layout to map out HTML elements / create a responsive website
+*/
+
 * {
     box-sizing: border-box;
   }
@@ -45,12 +59,6 @@
     background-color: #32CBFF;
   }
  
-  .homepageRow {  
-    display: flex;
-    flex-wrap: wrap;
-    min-height: 85vh;
-  }
-
   /*Collective styles - two-third layout*/
   .pageHeader {
     color: #4F3A5A;
@@ -196,7 +204,7 @@
     margin: 10px 10px 0px 10px;
   }
 
-    /*Log Response*/
+    /*Log Response page - text styles*/
   .pageHeaderLogR {
     color: #4F3A5A;
     font-family: "Dosis", sans-serif;
@@ -231,7 +239,7 @@
     background-color: transparent;
   }
 
-  /*Responsive layout*/
+  /*Responsive layout - column layout for screens 600px or less*/
   @media screen and (max-width: 600px) {
 
     .header {
