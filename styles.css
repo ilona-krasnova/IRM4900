@@ -204,6 +204,14 @@
     letter-spacing: 5px;
     padding-left: 6%;
   }
+  
+  .logPagePara {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    line-height: 200%;
+    padding-left: 6%;
+    padding-right: 6%;
+  }
 
   /*Footer*/
   .footer {
