@@ -49,7 +49,7 @@
 
             <span id="sliderValue"></span>
 
-            <img src="images/hoot.svg" alt="Owl mascot" class="homepageOwl">
+            <img src="images/homepageOwl.svg" alt="Owl mascot" class="homepageOwl">
 
             <?php include("footer.php"); ?>
 
