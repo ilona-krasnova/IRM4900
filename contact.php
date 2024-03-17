@@ -37,7 +37,7 @@
                 </div><!--end of center main layout-->
 
                 <div class="centerLayoutImage">
-                    <img src="images/hootContact.svg" alt="Owl mascot" class="centerLayoutOwl">
+                    <img src="images/contactUsOwl.svg" alt="Owl throwing a paperplane" class="centerLayoutOwl">
                 </div><!--end of center layout image-->
 
                 <div class="contactIcons">
