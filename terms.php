@@ -102,7 +102,7 @@
             </div><!--end of mainLayout-->
             
             <div class="sideLayout">
-                <img src="images/hootAboutOG.svg" alt="Owl mascot waving" class="sideLayoutOwl">
+                <img src="images/termsOwl.svg" alt="Owl holding a pencil" class="sideLayoutOwl">
             </div><!--end of side layout-->
 
         </div><!--end of two-third layout-->
