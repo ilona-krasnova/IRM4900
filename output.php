@@ -100,7 +100,7 @@ include("end.php");
             </div><!--end of main layout-->
 
             <div class="sideLayout">
-                <img src="images/hootGen.svg" alt="Owl pointing at generated AI text" class="sideLayoutOwl">
+                <img src="images/homepageOwlPointer.svg" alt="Owl pointing at generated AI text" class="sideLayoutOwl">
             </div><!--end of sideLayout-->        
         
         </div><!--end of two-third layout-->
