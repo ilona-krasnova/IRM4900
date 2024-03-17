@@ -134,8 +134,8 @@
     border: none;
     letter-spacing: 2px;
     margin-left: 5%;
-    padding: 10px 0px 10px;
-    width: 15%;
+    padding: 10px 10px 10px;
+    word-wrap: normal;
   }
 
   .clearBtn {
@@ -148,8 +148,8 @@
     border: none;
     letter-spacing: 2px; 
     margin-right: 5%;
-    padding: 10px 0px 10px;
-    width: 15%;
+    padding: 10px 10px 10px;
+    word-wrap: normal;
   }
 
   /*Collective styles - Center layout*/
