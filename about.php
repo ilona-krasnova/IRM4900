@@ -66,7 +66,7 @@
                 </div>
 
                 <div class="sideLayout">
-                    <img src="images/hootAboutOG.svg" alt="Owl mascot waving" class="sideLayoutOwl">
+                    <img src="images/aboutOwl.svg" alt="Owl thinking about the About page" class="sideLayoutOwl">
                 </div><!--end of sideLayout-->
 
             </div><!--end of two-third layout-->
