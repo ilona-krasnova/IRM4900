@@ -7,15 +7,10 @@ include("end.php");
 
 <html>
 
+    <!--Head element used to contain metadata, estabilish the website's title and import google fonts-->
     <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Rescribe: Response Log</title>
-            <link rel="stylesheet" href="styles.css">
-            <style>
-                @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Quicksand:wght@300..700&display=swap');
-            </style>
-            <link rel="icon" href="images/icons8-feather-48.png" />
+        <?php include("head.php"); ?>
+        <title>Rescribe: Response Log</title>
     </head>
 
     <body>
