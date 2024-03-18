@@ -1,8 +1,8 @@
 <!-- Show this page while processing -->
 <html>
 <head>
-    <title>Rescribe: processing</title>
-    <link rel="icon" href="images/icons8-feather-48.png" />
+    <?php include("header.php") ?>
+    <title>Rescribe: Processing</title>
   </head>
    <body>
         <?php include("header.php") ?>
