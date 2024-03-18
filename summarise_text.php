@@ -1,7 +1,7 @@
 <!-- Show this page while processing -->
 <html>
 <head>
-    <?php include("header.php") ?>
+    <?php include("head.php") ?>
     <title>Rescribe: Processing</title>
   </head>
    <body>
