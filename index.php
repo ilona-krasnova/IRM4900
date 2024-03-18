@@ -21,35 +21,42 @@
     </head>
 
     <body>
+    
+        <?php include("header.php"); ?>
 
-         <!--Website toolbar: allows user the ability to redirect to other pages of the website-->
-        <div class="gridContainer">
-                
-            <?php include("header.php"); ?>
-
-            <h1 class="aboutHeader">Generate text summary</h1>
-
-            <!--HTML form that uses a HTTP post request to send user request/ API request.
+        <div class="twoThirdLayout">
+            <div class="mainLayout">
+                <h1 class="pageHeader">Generate text summary</h1>
+                            <!--HTML form that uses a HTTP post request to send user request/ API request.
                 The form data is sent for processing to a PHP file "summarise_text.php".
             -->
-            <form method="post" action="summarise_text.php" class="formElement">
-                    <label for="textAI" id="instructions">Please paste the text to simplify into the box below</label>
-                    <textarea class="textAInput" id="textAI" name="text" placeholder="Paste text here..."></textarea>
-                    <input type="range" min="1" max="3" value="1" class="diffSlider" id="dSlider" name="level" onchange="changingSlider()">
+
+                <form method="post" action="summarise_text.php" class="formElement">
+                    <label for="textAI" id="subHeader">Please paste the text to simplify into the box below</label>
+                    <textarea class="textAInput" id="textAI" name="text" placeholder="Paste text here..." rows="12"></textarea>
+
+                    <div class="difficultyRow">
+                        <span id="sliderValue"></span>
+                        <input type="range" min="1" max="3" value="1" class="diffSlider" id="dSlider" name="level" onchange="changingSlider()">
+                    </div>
+
+                    <div class="buttonRow">
+                        <input type="reset" class="clearBtn" value="Clear">
+                        <button type="submit" class="genBtn">Generate</button>
+                    </div>
                     
-                    <input type="reset" class="clearBtn" value="Clear">
-                    <button type="submit" class="genBtn">Generate</button>
-            </form><!--end of form-->
+                </form><!--end of form-->
 
-            <span id="sliderValue"></span>
+            </div><!--end of main layout-->
 
-            <img src="images/homepageOwl.svg" alt="Owl mascot" class="homepageOwl">
+            <div class="sideLayout">
+                <img src="images/homepageOwl.svg" alt="Owl mascot" class="sideLayoutOwl">
+            </div><!--end of side layout-->
+
+        </div><!--end of two-third layout-->
 
             <?php include("footer.php"); ?>
 
-        </div><!--end of grid container--> 
-
-        <!--clear button function--> 
         <script>
             /*Dsiplay and update slider value - reassign slider's predefined numerical values as Simple, Medium and Complex
             */
