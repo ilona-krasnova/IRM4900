@@ -60,10 +60,10 @@
 
             <div class="sideLayout">
               <!-- Text bubble container -->
-               <div class="textBubble">
+              <div class="textBubble">
                  <div class="talk-bubble talk-bubble-triangle">
                    <div class="talktext">
-                     <p>Hi, I'm Edgar! Welcome to Rescribe. Please paste your text in the text box.</p>
+                     <p>Hi, I'm Edgar! Welcome to Rescribe. Please paste the text you would like to simplify in the text box.</p>
                    </div>
                  </div>
                </div>
@@ -104,7 +104,7 @@
 
                 //Paste copied text
                 function pasteText() {
-                    navigator.clipboard.readText()
+                  if (navigator.clipboard) { navigator.clipboard.readText()
                         .then(text => {
                             // Paste text textarea
                             document.getElementById('textAI').value = text;
@@ -112,8 +112,10 @@
                         .catch(err => {
                             console.error('Failed to read clipboard contents: ', err);
                         });
+                } else {
+                  alert('Unable to read from browsers clipboard. Please paste manually.')
                 }
-
+              }
                 //Clear text from the textarea
                 function clearText() {
                 document.getElementById("textAI").value = "";
