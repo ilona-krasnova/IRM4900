@@ -13,6 +13,14 @@
     display: flex;
     background-color: #32CBFF;
     padding-bottom: 10px;
+    height: 70px;
+  }
+
+  @media screen and (max-width:768px) {
+    .header{
+      height: auto;
+      flex-direction: column;
+    }
   }
 
   .header a {
