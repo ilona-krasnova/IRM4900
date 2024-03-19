@@ -221,17 +221,14 @@
 
     .pasteBtn {
       background-color: #FFD700;
-
   }
 
     .genBtn {
       background-color: #7DCE82;
-
   }
 
     .clearBtn {
       background-color: #FF8360;
-
   }
 
   /*Collective styles - Center layout*/
@@ -280,15 +277,6 @@
       background-color: white;
       border-radius: 20px;
       padding: 10px;
-  }
-
-  /* Adjust Edgar talk bubble position for smaller screens */
-  @media screen and (max-width: 750px) {
-      .talk-bubble {
-          top: 130%;
-          left: 100%;
-          height: 150px;
-      }
   }
 
   .talk-bubble-triangle:after {
