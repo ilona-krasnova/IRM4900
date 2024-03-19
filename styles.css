@@ -52,6 +52,7 @@
     font-weight: 600;
     letter-spacing: 5px;
     padding-left: 10%;
+    padding-top: 2%;
   }
 
   .pagePara {
@@ -112,7 +113,7 @@
     border: none;
     resize: none;
     font-size: 16px;
-    margin-top: 3%;
+    margin-top: 5%;
   }
 
   /* Radio buttons */
