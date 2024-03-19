@@ -34,6 +34,7 @@
                 <label for="textAI" id="subHeader">Please paste the text to simplify into the box below:</label>
                 <textarea class="textAInput" id="textAI" name="text" placeholder="Paste text here..." rows="12"></textarea>
 
+                <p class="radioText"> Select your level of difficulty:</p>
                 <div class="radioOptions">
                           <label class="radioContainer" for="simple">
                             <input type="radio" id="simple" name="level" value="1" onchange="changingSlider()">

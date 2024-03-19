@@ -116,11 +116,20 @@
     margin-top: 5%;
   }
 
+  .radioText {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    color: #4F3A5A;
+    text-align: center;
+    margin-top: 5%;
+  }
+
   /* Radio buttons */
   .radioOptions {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 1%;
   }
 
   .radioContainer {
@@ -131,8 +140,8 @@
       display: inline-flex;
       align-items: center;
       margin-right: 20px;
-      margin-top: 30px;
-      margin-bottom: 20px;
+      margin-top: 20px;
+      margin-bottom: 10px;
   }
 
   .radioContainer:not(:last-child) {
