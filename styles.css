@@ -273,9 +273,9 @@
   /* Edgar talk bubble */
   .talk-bubble {
       position: absolute;
-      top: 130px; 
+      top: 130px;
       left: 80%;
-      transform: translateX(-80%);
+      transform: translateX(-50%);
       max-width: 300px;
       width: auto;
       background-color: white;
@@ -286,7 +286,9 @@
   /* Adjust Edgar talk bubble position for smaller screens */
   @media screen and (max-width: 750px) {
       .talk-bubble {
-          top: 80%;
+          top: 130%;
+          left: 100%;
+          height: 150px;
       }
   }
 
