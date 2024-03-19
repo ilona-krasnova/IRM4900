@@ -14,7 +14,6 @@
     background-color: #32CBFF;
     padding-bottom: 10px;
     min-height: 70px;
-    width: 100%;
   }
 
   .header a {
@@ -378,6 +377,7 @@
 
     .header {
       flex-direction: column;
+      width: 100%;
     }
 
     .header a {
@@ -395,6 +395,36 @@
     .sideLayoutOwl {
       width: auto;
       float: right;
+    }
+
+    .textAInput {
+        padding: 20px;
+    }
+
+    .radioText {
+        margin-top: 3%;
+    }
+
+    .radioContainer {
+        margin-top: 10px;
+    }
+
+    .buttonRow {
+        flex-direction: column;
+    }
+
+    .pasteBtn,
+    .genBtn,
+    .clearBtn {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .talk-bubble {
+        top: 140%;
+        left: 50%;
+        width: 80%;
+        max-width: 80%;
     }
 
     #rescribe {
