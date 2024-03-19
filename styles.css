@@ -13,7 +13,8 @@
     display: flex;
     background-color: #32CBFF;
     padding-bottom: 10px;
-    height: 70px;
+    min-height: 70px;
+    width: 100%;
   }
 
   .header a {
@@ -272,7 +273,7 @@
   /* Edgar talk bubble */
   .talk-bubble {
       position: absolute;
-      top: 130px;
+      top: 130px; /* Initial position */
       left: 80%;
       transform: translateX(-50%);
       max-width: 300px;
@@ -280,6 +281,13 @@
       background-color: white;
       border-radius: 20px;
       padding: 10px;
+  }
+
+  /* Adjust Edgar talk bubble position for smaller screens */
+  @media screen and (max-width: 750px) {
+      .talk-bubble {
+          top: 80%;
+      }
   }
 
   .talk-bubble-triangle:after {
