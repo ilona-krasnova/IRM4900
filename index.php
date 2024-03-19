@@ -114,7 +114,7 @@
                             console.error('Failed to read clipboard contents: ', err);
                         });
                 } else {
-                  alert('Unable to read from browsers clipboard. Please paste manually.')
+                  alert('Unable to read from clipboard. Please paste manually.')
                 }
               }
                 //Clear text from the textarea
