@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
   }
-  
+
   body {
     margin: 0;
     padding: 0;
@@ -44,7 +44,7 @@
     margin-top: 6px;
     background-color: #32CBFF;
   }
- 
+
   /*Collective styles - two-third layout*/
   .pageHeader {
     color: #4F3A5A;
@@ -53,19 +53,20 @@
     letter-spacing: 5px;
     padding-left: 10%;
   }
-  
+
   .pagePara {
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
     line-height: 200%;
     padding-left: 10%;
   }
-  
+
   .sideLayoutOwl {
     width: 100%;
+    margin-top: 150px;
   }
 
-  .twoThirdLayout {  
+  .twoThirdLayout {
     display: flex;
     flex-wrap: wrap;
   }
@@ -73,17 +74,17 @@
   .mainLayout {
     flex: 65%;
   }
-  
+
   .sideLayout {
     flex: 35%;
   }
 
-  /*Hompage - Form layout*/
+/*Hompage - Form layout*/
   .formElement {
     padding-left: 10%;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
   }
 
   #subHeader {
@@ -94,23 +95,6 @@
     font-size: 22px;
   }
 
-  .textAInput {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    color: black;
-    padding: 30px;
-    border-radius: 20px;
-    border: none;
-    resize: none;
-    font-size: 16px;
-    margin-top: 3%;
-  }
-
-  .difficultyRow {
-    display: flex;
-    justify-content: center;
-  }
-
   #sliderValue {
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
@@ -119,41 +103,128 @@
     letter-spacing: 2px;
   }
 
+  .textAInput {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    color: black;
+    padding: 40px;
+    border-radius: 20px;
+    border: none;
+    resize: none;
+    font-size: 16px;
+    margin-top: 3%;
+  }
+
+  /* Radio buttons */
+  .radioOptions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .radioContainer {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #4F3A5A;
+      display: inline-flex;
+      align-items: center;
+      margin-right: 20px;
+      margin-top: 30px;
+      margin-bottom: 20px;
+  }
+
+  .radioContainer:not(:last-child) {
+      margin-right: 20px;
+  }
+
+  .radioContainer input[type="radio"] {
+      display: none;
+  }
+
+  .checkmark {
+      width: 25px;
+      height: 25px;
+      background-color: #32CBFF;
+      border-radius: 50%;
+      cursor: pointer;
+      margin-right: 5px;
+      position: relative;
+  }
+
+  .radioContainer:hover input[type="radio"] + .checkmark {
+      background-color: #2196F3;
+  }
+
+  .radioContainer input[type="radio"]:checked + .checkmark {
+      background-color: #2196F3;
+  }
+
+  .checkmark:after {
+      content: "";
+      display: none;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #4F3A5A;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+
+  .radioContainer:hover input[type="radio"] + .checkmark:after,
+  .radioContainer input[type="radio"]:checked + .checkmark:after {
+      display: inline-block;
+  }
+
+  /* Button container */
   .buttonRow {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
   }
 
-  .genBtn {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    font-size: 20px;
-    color: black;
-    background-color: #7DCE82;
-    border-radius: 50px;
-    border: none;
-    letter-spacing: 2px;
-    margin-left: 5%;
-    padding: 10px 10px 10px;
-    word-wrap: normal;
-  }
-
+  .pasteBtn,
+  .genBtn,
   .clearBtn {
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 15px;
     color: black;
-    background-color: #FF8360;
     border-radius: 50px;
     border: none;
-    letter-spacing: 2px; 
-    margin-right: 5%;
-    padding: 10px 10px 10px;
-    word-wrap: normal;
+    letter-spacing: 2px;
+    width: 150px;
+    height: 50px;
+    margin: 0 10px;
+    transition: box-shadow 0.3s ease;
+     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .pasteBtn:hover,
+  .genBtn:hover,
+  .clearBtn:hover {
+     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+    .pasteBtn {
+      background-color: #FFD700;
+
+  }
+
+    .genBtn {
+      background-color: #7DCE82;
+
+  }
+
+    .clearBtn {
+      background-color: #FF8360;
+
   }
 
   /*Collective styles - Center layout*/
-  .centerLayout {  
+  .centerLayout {
     display: flex;
     flex: 1;
     flex-wrap: wrap;
@@ -185,6 +256,46 @@
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
     line-height: 200%;
+  }
+
+  /* Edgar talk bubble */
+  .talk-bubble {
+      position: absolute;
+      top: 100px;
+      left: 80%;
+      transform: translateX(-50%);
+      max-width: 300px;
+      width: auto;
+      background-color: white;
+      border-radius: 20px;
+      padding: 10px;
+  }
+
+  .talk-bubble-triangle:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid white;
+  }
+
+  .talktext {
+    padding: 1em;
+    text-align: left;
+    line-height: 1.5em;
+    font-family: 'Quicksand', sans-serif;
+    color: #4F3A5A;
+  }
+
+  .talktext p {
+      overflow: hidden;
+      white-space: pre-wrap;
+      margin: 0 auto;
+      letter-spacing: 2px;
   }
 
   /*Contact us page - icon/ images*/
@@ -226,7 +337,7 @@
   /*Footer*/
   .footer {
     display: flex;
-    flex: 1; 
+    flex: 1;
     justify-content: center;
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
@@ -245,7 +356,7 @@
   @media screen and (max-width: 750px) {
 
     .header {
-      flex-direction: column;  
+      flex-direction: column;
     }
 
     .header a {
@@ -287,8 +398,4 @@
       align-content: center;
       text-align: center;
     }
-
- 
   }
-
-
