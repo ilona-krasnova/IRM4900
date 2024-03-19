@@ -16,13 +16,6 @@
     height: 70px;
   }
 
-  @media screen and (max-width:768px) {
-    .header{
-      height: auto;
-      flex-direction: column;
-    }
-  }
-
   .header a {
     text-decoration: none;
     background-color: transparent;
@@ -314,16 +307,6 @@
       white-space: pre-wrap;
       margin: 0 auto;
       letter-spacing: 2px;
-  }
-
-  /* Media query for mobile screens */
-  @media screen and (max-width: 768px) {
-      .talk-bubble {
-          top: 50px;
-          left: 50%;
-          transform: translateX(-50%);
-          max-width: 200px;
-      }
   }
 
   /*Contact us page - icon/ images*/
