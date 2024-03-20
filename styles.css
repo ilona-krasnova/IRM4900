@@ -1,440 +1,373 @@
 * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
 
-  body {
-    margin: 0;
-    padding: 0;
-    background-color:#EFEDEB;
-  }
+body {
+  margin: 0;
+  padding: 0;
+  background-color:#EFEDEB;
+}
 
-  /*Website header - navigation*/
-  .header {
-    display: flex;
+/*Website header - navigation*/
+.header {
+  display: flex;
+  background-color: #32CBFF;
+  padding-bottom: 10px;
+  min-height: 70px;
+}
+
+.header a {
+  text-decoration: none;
+  background-color: transparent;
+  color: #4F3A5A;
+  padding-right: 35px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+  align-self: center;
+  font-size: 27px;
+}
+
+#rescribe {
+  display: flex;
+  flex: 1;
+  padding-left: 6px;
+  letter-spacing: 5px;
+  font-size: 35px;
+  font-family: "Dosis", sans-serif;
+  font-weight: 600;
+}
+
+.featherIcon {
+  width: 30px;
+  height: 30px;
+  padding-top: 3px;
+  margin-right: 5px;
+  margin-top: 6px;
+  background-color: #32CBFF;
+}
+
+/*Collective styles - two-third layout*/
+.pageHeader {
+  color: #4F3A5A;
+  font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  letter-spacing: 5px;
+  padding-left: 10%;
+  padding-top: 2%;
+}
+
+.pagePara {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  line-height: 200%;
+  padding-left: 10%;
+}
+
+.sideLayoutOwl {
+  width: 100%;
+  margin-top: 12%;
+}
+
+.twoThirdLayout {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mainLayout {
+  flex: 65%;
+}
+
+.sideLayout {
+  flex: 35%;
+}
+
+/*Hompage - Form layout*/
+.formElement {
+  padding-left: 10%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+#subHeader {
+  color: #4F3A5A;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  letter-spacing: 5px;
+  font-size: 22px;
+}
+
+.textAInput {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  color: black;
+  padding: 30px;
+  border-radius: 20px;
+  border: none;
+  resize: none;
+  font-size: 16px;
+  margin-top: 5%;
+}
+
+.radioText {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  color: #4F3A5A;
+  text-align: center;
+  margin-top: 5%;
+}
+
+/* Radio buttons */
+.radioOptions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radioContainer {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #4F3A5A;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.radioContainer:not(:last-child) {
+    margin-right: 20px;
+}
+
+.radioContainer input[type="radio"] {
+    display: none;
+}
+
+.checkmark {
+    width: 25px;
+    height: 25px;
     background-color: #32CBFF;
-    padding-bottom: 10px;
-    min-height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 5px;
+    position: relative;
+}
+
+.radioContainer:hover input[type="radio"] + .checkmark {
+    background-color: #2196F3;
+}
+
+.radioContainer input[type="radio"]:checked + .checkmark {
+    background-color: #2196F3;
+}
+
+.checkmark:after {
+    content: "";
+    display: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #4F3A5A;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.radioContainer:hover input[type="radio"] + .checkmark:after,
+.radioContainer input[type="radio"]:checked + .checkmark:after {
+    display: inline-block;
+}
+
+/* Button container */
+.buttonRow {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pasteBtn,
+.genBtn,
+.clearBtn {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: black;
+  border-radius: 50px;
+  border: none;
+  letter-spacing: 2px;
+  width: 150px;
+  height: 50px;
+  margin: 0 10px;
+  transition: box-shadow 0.3s ease;
+   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pasteBtn:hover,
+.genBtn:hover,
+.clearBtn:hover {
+   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+  .pasteBtn {
+    background-color: #FFD700;
+}
+
+  .genBtn {
+    background-color: #7DCE82;
+}
+
+  .clearBtn {
+    background-color: #FF8360;
+}
+
+/*Collective styles - Center layout*/
+.centerLayout {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+.centerMainLayout, .centerLayoutImage  {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.centerPageHeader {
+  color: #4F3A5A;
+  font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  letter-spacing: 5px;
+}
+
+.centerPagePara {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  line-height: 200%;
+}
+
+/*Contact us page - icon/ images*/
+.contactIcons {
+  display: flex;
+  justify-content: center;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  width: 100%;
+}
+
+.centerLayoutOwl {
+  width: 27.5%;
+}
+
+.emailIcon {
+  width: 30px;
+  height: 30px;
+  margin: 10px 10px 0px 10px;
+}
+
+/*Log Response*/
+.pageHeaderLogR {
+  color: #4F3A5A;
+  font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  letter-spacing: 5px;
+  padding-left: 5%;
+}
+
+.logPagePara {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  line-height: 200%;
+  padding-left: 6%;
+  padding-right: 6%;
+}
+
+/*Footer*/
+.footer {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  padding-top: 60px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.footer a {
+  color: #4F3A5A;
+  background-color: transparent;
+}
+
+/*Responsive layout*/
+@media screen and (max-width: 750px) {
+
+  .header {
+    flex-direction: column;
+    width: 100%;
   }
 
   .header a {
-    text-decoration: none;
-    background-color: transparent;
-    color: #4F3A5A;
-    padding-right: 35px;
-    font-family: "Quicksand", sans-serif;
-    font-weight: 600;
-    align-self: center;
-    font-size: 27px;
-  }
-
-  #rescribe {
-    display: flex;
-    flex: 1;
-    padding-left: 6px;
-    letter-spacing: 5px;
-    font-size: 35px;
-    font-family: "Dosis", sans-serif;
-    font-weight: 600;
-  }
-
-  .featherIcon {
-    width: 30px;
-    height: 30px;
-    padding-top: 3px;
-    margin-right: 5px;
-    margin-top: 6px;
-    background-color: #32CBFF;
-  }
-
-  /*Collective styles - two-third layout*/
-  .pageHeader {
-    color: #4F3A5A;
-    font-family: "Dosis", sans-serif;
-    font-weight: 600;
-    letter-spacing: 5px;
-    padding-left: 10%;
-    padding-top: 2%;
-  }
-
-  .pagePara {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    line-height: 200%;
-    padding-left: 10%;
-  }
-
-  .sideLayoutOwl {
-    width: 100%;
-    margin-top: 200px;
+    padding-right: 0%;
   }
 
   .twoThirdLayout {
-    display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
   }
 
   .mainLayout {
-    flex: 65%;
+    padding-right: 10%;
   }
 
-  .sideLayout {
-    flex: 35%;
-  }
-
-/*Hompage - Form layout*/
-  .formElement {
-    padding-left: 10%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
-
-  #subHeader {
-    color: #4F3A5A;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    letter-spacing: 5px;
-    font-size: 22px;
-  }
-
-  #sliderValue {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    font-size: 17px;
-    padding: 35px;
-    letter-spacing: 2px;
-  }
-
-  .textAInput {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    color: black;
-    padding: 40px;
-    border-radius: 20px;
-    border: none;
-    resize: none;
-    font-size: 16px;
+  .sideLayoutOwl {
+    width: auto;
+    float: right;
     margin-top: 5%;
+    display: none;
   }
 
-  .radioText {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    color: #4F3A5A;
-    text-align: center;
-    margin-top: 5%;
-  }
-
-  /* Radio buttons */
-  .radioOptions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1%;
-  }
-
-  .radioContainer {
-      font-family: 'Quicksand', sans-serif;
-      font-weight: 600;
-      font-size: 16px;
-      color: #4F3A5A;
-      display: inline-flex;
-      align-items: center;
-      margin-right: 20px;
-      margin-top: 20px;
-      margin-bottom: 20px;
-  }
-
-  .radioContainer:not(:last-child) {
-      margin-right: 20px;
-  }
-
-  .radioContainer input[type="radio"] {
-      display: none;
-  }
-
-  .checkmark {
-      width: 25px;
-      height: 25px;
-      background-color: #32CBFF;
-      border-radius: 50%;
-      cursor: pointer;
-      margin-right: 5px;
-      position: relative;
-  }
-
-  .radioContainer:hover input[type="radio"] + .checkmark {
-      background-color: #2196F3;
-  }
-
-  .radioContainer input[type="radio"]:checked + .checkmark {
-      background-color: #2196F3;
-  }
-
-  .checkmark:after {
-      content: "";
-      display: none;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #4F3A5A;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-  }
-
-  .radioContainer:hover input[type="radio"] + .checkmark:after,
-  .radioContainer input[type="radio"]:checked + .checkmark:after {
-      display: inline-block;
-  }
-
-  /* Button container */
   .buttonRow {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+      flex-direction: column;
   }
 
   .pasteBtn,
   .genBtn,
   .clearBtn {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-    color: black;
-    border-radius: 50px;
-    border: none;
-    letter-spacing: 2px;
-    width: 150px;
-    height: 50px;
-    margin: 0 10px;
-    transition: box-shadow 0.3s ease;
-     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      margin-top: 10px;
+      width: 100%;
   }
 
-  .pasteBtn:hover,
-  .genBtn:hover,
-  .clearBtn:hover {
-     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  #rescribe {
+    border-bottom: #4F3A5A solid 2px;
   }
 
-    .pasteBtn {
-      background-color: #FFD700;
-  }
-
-    .genBtn {
-      background-color: #7DCE82;
-  }
-
-    .clearBtn {
-      background-color: #FF8360;
-  }
-
-  /*Collective styles - Center layout*/
   .centerLayout {
-    display: flex;
-    flex: 1;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 
-  .centerMainLayout, .centerLayoutImage  {
-    display: flex;
-    flex: 1;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    text-align: center;
-    width: 100%;
+  .contactIcons {
+    padding-left: 10%;
+    padding-right: 10%;
   }
 
-  .centerPageHeader {
-    color: #4F3A5A;
-    font-family: "Dosis", sans-serif;
-    font-weight: 600;
-    letter-spacing: 5px;
-  }
-
-  .centerPagePara {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    line-height: 200%;
-  }
-
-  /* Edgar talk bubble */
-  .talk-bubble {
-      position: absolute;
-      top: 130px;
-      left: 80%;
-      transform: translateX(-50%);
-      max-width: 300px;
-      width: auto;
-      background-color: white;
-      border-radius: 20px;
-      padding: 10px;
-  }
-
-  .talk-bubble-triangle:after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      right: 15px;
-      width: 0;
-      height: 0;
-      border-left: 20px solid transparent;
-      border-right: 20px solid transparent;
-      border-top: 20px solid white;
-  }
-
-  .talktext {
-      padding: 16px;
-      text-align: left;
-      line-height: 24px;
-      font-family: 'Quicksand', sans-serif;
-      color: #4F3A5A;
-  }
-
-  .talktext p {
-      overflow: hidden;
-      white-space: pre-wrap;
-      margin: 0 auto;
-      letter-spacing: 2px;
-  }
-
-  /*Contact us page - icon/ images*/
   .contactIcons {
     display: flex;
-    justify-content: center;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    width: 100%;
-  }
-
-  .centerLayoutOwl {
-    width: 27.5%;
-  }
-
-  .emailIcon {
-    width: 30px;
-    height: 30px;
-    margin: 10px 10px 0px 10px;
-  }
-
-  /*Log Response*/
-  .pageHeaderLogR {
-    color: #4F3A5A;
-    font-family: "Dosis", sans-serif;
-    font-weight: 600;
-    letter-spacing: 5px;
-    padding-left: 5%;
-  }
-
-  .logPagePara {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    line-height: 200%;
-    padding-left: 6%;
-    padding-right: 6%;
-  }
-
-  /*Footer*/
-  .footer {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    padding-top: 70px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
     text-align: center;
-    padding-bottom: 10px;
   }
-
-  .footer a {
-    color: #4F3A5A;
-    background-color: transparent;
-  }
-
-  /*Responsive layout*/
-  @media screen and (max-width: 750px) {
-
-    .header {
-      flex-direction: column;
-      width: 100%;
-    }
-
-    .header a {
-      padding-right: 0%;
-    }
-
-    .twoThirdLayout {
-      flex-direction: column;
-    }
-
-    .mainLayout {
-      padding-right: 10%;
-    }
-
-    .sideLayoutOwl {
-      width: auto;
-      float: right;
-    }
-
-    .textAInput {
-        padding: 20px;
-    }
-
-    .radioText {
-        margin-top: 3%;
-    }
-
-    .radioContainer {
-        margin-top: 10px;
-    }
-
-    .buttonRow {
-        flex-direction: column;
-    }
-
-    .pasteBtn,
-    .genBtn,
-    .clearBtn {
-        margin-top: 10px;
-        width: 100%;
-    }
-
-    .talk-bubble {
-        top: 140%;
-        left: 50%;
-        width: 80%;
-        max-width: 80%;
-    }
-
-    #rescribe {
-      border-bottom: #4F3A5A solid 2px;
-    }
-
-    .centerLayout {
-      padding-left: 10%;
-      padding-right: 10%;
-    }
-
-    .contactIcons {
-      padding-left: 10%;
-      padding-right: 10%;
-    }
-
-    .contactIcons {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      align-items: center;
-      align-content: center;
-      text-align: center;
-    }
-  }
+}
