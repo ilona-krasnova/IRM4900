@@ -60,14 +60,6 @@
             </div><!--end of main layout-->
 
             <div class="sideLayout">
-              <!-- Text bubble container -->
-              <div class="textBubble">
-                 <div class="talk-bubble talk-bubble-triangle">
-                   <div class="talktext">
-                     <p>Hi, I'm Edgar! Welcome to Rescribe. Please paste the text you would like to simplify in the text box.</p>
-                   </div>
-                 </div>
-               </div>
                 <img src="images/homepageOwl.svg" alt="Owl mascot" class="sideLayoutOwl">
             </div><!--end of side layout-->
 
