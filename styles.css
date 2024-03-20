@@ -310,7 +310,21 @@ body {
   background-color: transparent;
 }
 
-/*Responsive layout*/
+/*Responsive layout - browser window 870px or less*/
+@media screen and (max-width: 870px) {
+  .mainLayout {
+    padding-right: 10%;
+  }
+
+  .sideLayoutOwl {
+    width: 50%;
+    float: right;
+    margin-top: 5%;
+  }
+  
+}
+
+/*Responsive layout - browser window (mobile screens) 750px or less*/
 @media screen and (max-width: 750px) {
 
   .header {
@@ -331,9 +345,6 @@ body {
   }
 
   .sideLayoutOwl {
-    width: auto;
-    float: right;
-    margin-top: 5%;
     display: none;
   }
 
