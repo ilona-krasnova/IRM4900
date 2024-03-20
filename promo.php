@@ -114,7 +114,7 @@
             </div><!--end of main layout-->
             <div class="sideLayout">
               <!-- Text bubble container -->
-                <img src="images/homepageOwl.svg" alt="Owl mascot" class="sideLayoutOwl">
+                <img src="images/homepageOwlOG.svg" alt="Owl mascot" class="sideLayoutOwl">
             </div><!--end of side layout-->
         </div><!--end of two-third layout-->
             <?php include("footer.php"); ?>
