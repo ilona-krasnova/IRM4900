@@ -13,7 +13,7 @@ body {
   display: flex;
   background-color: #32CBFF;
   padding-bottom: 10px;
-  min-height: 70px;
+  min-height: 60px;
 }
 
 .header a {
@@ -53,7 +53,7 @@ body {
   font-weight: 600;
   letter-spacing: 5px;
   padding-left: 10%;
-  padding-top: 2%;
+  padding-top: 1%;
 }
 
 .pagePara {
@@ -106,7 +106,7 @@ body {
   border: none;
   resize: none;
   font-size: 16px;
-  margin-top: 5%;
+  margin-top: 2%;
 }
 
 .radioText {
@@ -114,7 +114,6 @@ body {
   font-weight: 600;
   color: #4F3A5A;
   text-align: center;
-  margin-top: 5%;
 }
 
 /* Radio buttons */
@@ -248,6 +247,7 @@ body {
   font-family: "Dosis", sans-serif;
   font-weight: 600;
   letter-spacing: 5px;
+  padding-top: 1%;
 }
 
 .centerPagePara {
@@ -317,7 +317,7 @@ body {
   }
 
   .sideLayoutOwl {
-    width: 50%;
+    width: 60%;
     float: right;
     margin-top: 5%;
   }
