@@ -263,6 +263,7 @@ body {
   font-family: 'Quicksand', sans-serif;
   font-weight: 600;
   width: 100%;
+  margin-bottom: 0.1%;
 }
 
 .centerLayoutOwl {
@@ -317,7 +318,7 @@ body {
   }
 
   .sideLayoutOwl {
-    width: 60%;
+    width: 100%;
     float: right;
     margin-top: 5%;
   }
